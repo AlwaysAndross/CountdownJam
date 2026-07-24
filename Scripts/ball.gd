@@ -5,8 +5,10 @@ signal ball
 
 @export var max_speed: float = 400.0
 @export var pop_effect : PackedScene
+@onready var bounce_effect: AudioStreamPlayer = $Bounce_Effect
 
 func _ready() -> void:
+	bounce_effect.play()
 	var rand = randf_range(-1,1)
 	var mass_rand = randf_range(1,3)
 	mass = mass_rand
