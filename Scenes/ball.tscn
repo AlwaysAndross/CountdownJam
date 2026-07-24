@@ -3,12 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://b3304b2vdbjrj" path="res://Sprites/Block.png" id="1_d60mj"]
 [ext_resource type="Script" uid="uid://bbwxyw6kogr5l" path="res://Scripts/ball.gd" id="1_ij5cq"]
 [ext_resource type="PackedScene" uid="uid://bko3gw82t0jff" path="res://Scenes/pop_ball_effect.tscn" id="2_376qj"]
+[ext_resource type="AudioStream" uid="uid://cjin85ilmofu0" path="res://Sounds2/00C4_000A.wav" id="4_yk4cr"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ij5cq"]
 bounce = 1.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d60mj"]
 radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yk4cr"]
 
 [node name="Ball" type="RigidBody2D" unique_id=560762546]
 disable_mode = 2
@@ -30,5 +33,14 @@ shape = SubResource("CircleShape2D_d60mj")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1155195292]
 
 [node name="Bounce_Effect" type="AudioStreamPlayer" parent="." unique_id=41974532]
+stream = ExtResource("4_yk4cr")
+volume_db = -20.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1889840968]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1186684699]
+shape = SubResource("CircleShape2D_yk4cr")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

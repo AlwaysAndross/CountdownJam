@@ -6,9 +6,9 @@ signal ball
 @export var max_speed: float = 400.0
 @export var pop_effect : PackedScene
 @onready var bounce_effect: AudioStreamPlayer = $Bounce_Effect
+var bounced = false
 
 func _ready() -> void:
-	bounce_effect.play()
 	var rand = randf_range(-1,1)
 	var mass_rand = randf_range(1,3)
 	mass = mass_rand
@@ -32,3 +32,13 @@ func destory():
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	destory()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	print(body)
+	bounce_effect.play()
+	bounced = true
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	bounced = false

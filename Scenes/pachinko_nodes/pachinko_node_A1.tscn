@@ -50,24 +50,12 @@ offset_bottom = 264.0
 [node name="TileLayer" parent="." index="1" unique_id=1196776029]
 tile_map_data = PackedByteArray("AAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAABAAUAAAAAAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAMAAEAAAAAAAAAAAANAAEAAAAAAAAAAAAOAAEAAAAAAAAAAAAPAAEAAAAAAAAAAAAQAAEAAAAAAAAAAAARAAEAAAAAAAAAAAASAAEAAAAAAAAAAAATAAEAAAAAAAAAAAAUAAEAAAAAAAAAAAAVAAEAAAAAAAAAAAAWAAEAAAAAAAAAAAAXAAEAAAAAAAAAAAAYAAEAAAAAAAAAAAAcAAEAAAAAAAAAAAAdAAEAAAAAAAAAAAAeAAEAAAAAAAAAAAAfAAEAAAAAAAAAAAABAAgAAAAAAAAAAAABAAkAAAAAAAAAAAABAAoAAAAAAAAAAAABAAsAAAAAAAAAAAABAAwAAAAAAAAAAAABAA0AAAAAAAAAAAABAA4AAAAAAAAAAAABAA8AAAAAAAAAAAABABAAAAAAAAAAAAABABEAAAAAAAAAAAABABIAAAAAAAAAAAABABMAAAAAAAAAAAABABQAAAAAAAAAAAABABUAAAAAAAAAAAABABYAAAAAAAAAAAABABcAAAAAAAAAAAABABgAAAAAAAAAAAABABkAAAAAAAAAAAABABoAAAAAAAAAAAABABsAAAAAAAAAAAABABwAAAAAAAAAAAABAB0AAAAAAAAAAAABAB4AAAAAAAAAAAAKAB4AAAAAAAAAAAAWAB4AAAAAAAAAAAAKAB0AAAAAAAAAAAAKABwAAAAAAAAAAAASABwAAAAAAAAAAAASAB0AAAAAAAAAAAASAB4AAAAAAAAAAAAWABwAAAAAAAAAAAAWAB0AAAAAAAAAAAAKABsAAAAAAAAAAAASABoAAAAAAAAAAAASABsAAAAAAAAAAAAWABoAAAAAAAAAAAAWABsAAAAAAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAAZAAEAAAAAAAAAAAAaAAEAAAAAAAAAAAAbAAEAAAAAAAAAAAASABkAAAAAAAAAAAASABgAAAAAAAAAAAAWABkAAAACAAAAAAAKABoAAAAAAAAAAAAGAB4AAAAAAAAAAAAOAB4AAAAAAAAAAAAaAB4AAAAAAAAAAAAfAB4AAAAAAAAAAAAfAAIAAAAAAAAAAAAfAAMAAAAAAAAAAAAfAAQAAAAAAAAAAAAfAAUAAAAAAAAAAAAfAAYAAAAAAAAAAAAfAAcAAAAAAAAAAAAfAAgAAAAAAAAAAAAfAAkAAAAAAAAAAAAfAAoAAAAAAAAAAAAfAAsAAAAAAAAAAAAfAAwAAAAAAAAAAAAfAA0AAAAAAAAAAAAfAA4AAAAAAAAAAAAfAA8AAAAAAAAAAAAfABAAAAAAAAAAAAAfABEAAAAAAAAAAAAfABIAAAAAAAAAAAAfABMAAAAAAAAAAAAfABQAAAAAAAAAAAAfABUAAAAAAAAAAAAfABYAAAAAAAAAAAAfABcAAAAAAAAAAAAfABgAAAAAAAAAAAAfABkAAAAAAAAAAAAfABoAAAAAAAAAAAAfABsAAAAAAAAAAAAfABwAAAAAAAAAAAAfAB0AAAAAAAAAAAAfAB8AAAAAAAAAAAABAB8AAAAAAAAAAAAGAB8AAAAAAAAAAAAKAB8AAAAAAAAAAAAOAB8AAAAAAAAAAAASAB8AAAAAAAAAAAAWAB8AAAAAAAAAAAAaAB8AAAAAAAAAAAAGABsAAAACAAAAAAAGABwAAAAAAAAAAAAGAB0AAAAAAAAAAAAKABkAAAACAAAAAAAOABcAAAACAAAAAAAOABgAAAAAAAAAAAAOABkAAAAAAAAAAAAOABoAAAAAAAAAAAAOABsAAAAAAAAAAAAOABwAAAAAAAAAAAAOAB0AAAAAAAAAAAASABcAAAACAAAAAAAaABsAAAACAAAAAAAaABwAAAAAAAAAAAAaAB0AAAAAAAAAAAASAAoAAAABAAAAAAAQAAwAAAABAAAAAAAMAAwAAAABAAAAAAAUAAwAAAABAAAAAAAOAA4AAAABAAAAAAASAA4AAAABAAAAAAAMABAAAAABAAAAAAAUABAAAAABAAAAAAAQABAAAAABAAAAAAAKAA4AAAABAAAAAAAWAA4AAAABAAAAAAAIABAAAAABAAAAAAAYABAAAAABAAAAAAAKABIAAAABAAAAAAAOABIAAAABAAAAAAASABIAAAABAAAAAAAWABIAAAABAAAAAAAMABQAAAABAAAAAAAUABQAAAABAAAAAAAQABUAAAABAAAAAAAQAAgAAAABAAAAAAAOAAoAAAABAAAAAAA=")
 
-[node name="Destroy_zone2" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="0" unique_id=956450642 instance=ExtResource("2_h4fh0")]
-position = Vector2(216, 224)
-
-[node name="CollisionShape2D" parent="DestoryZones/Destroy_zone2" index="1" unique_id=111973379]
-position = Vector2(16, 12)
-shape = SubResource("RectangleShape2D_ux5gs")
-
-[node name="DestustableBlocks7" type="TileMapLayer" parent="DestoryZones/Destroy_zone2" index="2" unique_id=1142641223]
-z_index = 4
-texture_filter = 1
-position = Vector2(-216, -224)
-tile_map_data = PackedByteArray("AAAbAB8AAAAAAAAAAAAcAB8AAAAAAAAAAAAdAB8AAAAAAAAAAAAeAB8AAAAAAAAAAAA=")
-tile_set = SubResource("TileSet_iskk3")
-physics_quadrant_size = 8
-
-[node name="Destroy_zone" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="1" unique_id=163085372 instance=ExtResource("2_h4fh0")]
+[node name="Destroy_zone" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="0" unique_id=163085372 instance=ExtResource("2_h4fh0")]
 position = Vector2(16, 224)
+new_zone = "A2"
+has_new_zone = true
 grid_color = Color(0.5464291, 0, 0, 1)
+area_start_hp = 20
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone" index="1" unique_id=111973379]
 position = Vector2(16, 12)
@@ -81,9 +69,31 @@ tile_map_data = PackedByteArray("AAACAB8AAAAAAAAAAAADAB8AAAAAAAAAAAAEAB8AAAAAAAA
 tile_set = SubResource("TileSet_iskk3")
 physics_quadrant_size = 8
 
+[node name="Destroy_zone2" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="1" unique_id=956450642 instance=ExtResource("2_h4fh0")]
+position = Vector2(216, 224)
+new_zone = "A2"
+has_new_zone = true
+grid_color = Color(0.5464291, 0, 0, 1)
+area_start_hp = 20
+
+[node name="CollisionShape2D" parent="DestoryZones/Destroy_zone2" index="1" unique_id=111973379]
+position = Vector2(16, 12)
+shape = SubResource("RectangleShape2D_ux5gs")
+
+[node name="DestustableBlocks7" type="TileMapLayer" parent="DestoryZones/Destroy_zone2" index="2" unique_id=1142641223]
+z_index = 4
+texture_filter = 1
+position = Vector2(-216, -224)
+tile_map_data = PackedByteArray("AAAbAB8AAAAAAAAAAAAcAB8AAAAAAAAAAAAdAB8AAAAAAAAAAAAeAB8AAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_iskk3")
+physics_quadrant_size = 8
+
 [node name="Destroy_zone3" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="2" unique_id=293488267 instance=ExtResource("2_h4fh0")]
 position = Vector2(184, 224)
+new_zone = "A2"
+has_new_zone = true
 grid_color = Color(0.5464291, 0, 0, 1)
+area_start_hp = 20
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone3" index="1" unique_id=111973379]
 position = Vector2(12, 12)
@@ -99,7 +109,10 @@ physics_quadrant_size = 8
 
 [node name="Destroy_zone4" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="3" unique_id=1335759674 instance=ExtResource("2_h4fh0")]
 position = Vector2(56, 224)
+new_zone = "A2"
+has_new_zone = true
 grid_color = Color(0.5464291, 0, 0, 1)
+area_start_hp = 20
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone4" index="1" unique_id=111973379]
 position = Vector2(12, 12)
@@ -115,7 +128,10 @@ physics_quadrant_size = 8
 
 [node name="Destroy_zone5" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="4" unique_id=1153396776 instance=ExtResource("2_h4fh0")]
 position = Vector2(88, 224)
+new_zone = "A2"
+has_new_zone = true
 grid_color = Color(0.5464291, 0, 0, 1)
+area_start_hp = 20
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone5" index="1" unique_id=111973379]
 position = Vector2(12, 12)
@@ -131,7 +147,10 @@ physics_quadrant_size = 8
 
 [node name="Destroy_zone6" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="5" unique_id=363700687 instance=ExtResource("2_h4fh0")]
 position = Vector2(152, 224)
+new_zone = "A2"
+has_new_zone = true
 grid_color = Color(0.5464291, 0, 0, 1)
+area_start_hp = 20
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone6" index="1" unique_id=111973379]
 position = Vector2(12, 12)
@@ -147,7 +166,10 @@ physics_quadrant_size = 8
 
 [node name="Destroy_zone7" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="6" unique_id=250722229 instance=ExtResource("2_h4fh0")]
 position = Vector2(120, 224)
+new_zone = "A2"
+has_new_zone = true
 grid_color = Color(0.5464291, 0, 0, 1)
+area_start_hp = 20
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone7" index="1" unique_id=111973379]
 position = Vector2(12, 12)
@@ -164,8 +186,8 @@ physics_quadrant_size = 8
 [node name="Cannon" parent="." index="3" unique_id=1427740003 instance=ExtResource("3_ux5gs")]
 position = Vector2(132, 24)
 
-[editable path="DestoryZones/Destroy_zone2"]
 [editable path="DestoryZones/Destroy_zone"]
+[editable path="DestoryZones/Destroy_zone2"]
 [editable path="DestoryZones/Destroy_zone3"]
 [editable path="DestoryZones/Destroy_zone4"]
 [editable path="DestoryZones/Destroy_zone5"]

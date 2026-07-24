@@ -42,69 +42,67 @@ tile_map_data = PackedByteArray("AAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAABAAIAAAAAAAA
 
 [node name="Destroy_zone" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="0" unique_id=163085372 instance=ExtResource("2_h8806")]
 position = Vector2(144, 40)
-grid_color = Color(0.09104455, 0.25564402, 0.3446429, 1)
-area_start_hp = 5
+grid_color = Color(0.5464291, 0, 0, 1)
+area_start_hp = 20
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone" index="1" unique_id=111973379]
-visible = true
 position = Vector2(12, 8)
 shape = SubResource("RectangleShape2D_h8806")
 
 [node name="Destroy_zone2" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="1" unique_id=166806764 instance=ExtResource("2_h8806")]
 position = Vector2(56, 208)
-area_start_hp = 30
+grid_color = Color(0.5464291, 0, 0, 1)
+area_start_hp = 20
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone2" index="1" unique_id=111973379]
-visible = true
 position = Vector2(16, 8)
 shape = SubResource("RectangleShape2D_gtujo")
 
 [node name="Destroy_zone3" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="2" unique_id=31122161 instance=ExtResource("2_h8806")]
 position = Vector2(120, 208)
+grid_color = Color(0.5464291, 0, 0, 1)
 area_start_hp = 20
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone3" index="1" unique_id=111973379]
-visible = true
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_5bc42")
 
 [node name="Destroy_zone4" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="3" unique_id=694779952 instance=ExtResource("2_h8806")]
 position = Vector2(176, 208)
+grid_color = Color(0.5464291, 0, 0, 1)
 area_start_hp = 20
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone4" index="1" unique_id=111973379]
-visible = true
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_5bc42")
 
 [node name="Destroy_zone5" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="4" unique_id=5817104 instance=ExtResource("2_h8806")]
 position = Vector2(224, 208)
-area_start_hp = 30
+grid_color = Color(0.5464291, 0, 0, 1)
+area_start_hp = 20
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone5" index="1" unique_id=111973379]
-visible = true
 position = Vector2(16, 8)
 shape = SubResource("RectangleShape2D_vjt6d")
 
 [node name="Destroy_zone6" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="5" unique_id=2141132087 instance=ExtResource("2_h8806")]
 position = Vector2(152, 208)
-grid_color = Color(0.09104455, 0.25564402, 0.3446429, 1)
-area_start_hp = 30
+grid_color = Color(0.5464291, 0, 0, 1)
+area_start_hp = 20
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone6" index="1" unique_id=111973379]
-visible = true
 position = Vector2(4, 8)
 shape = SubResource("RectangleShape2D_l87bp")
 
 [node name="Destroy_zone7" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="6" unique_id=337732987 node_paths=PackedStringArray("destroy_blocks") instance=ExtResource("2_h8806")]
 position = Vector2(16, 120)
 new_zone = "A3"
-grid_color = Color(0.40580523, 0.017825536, 0.36695826, 1)
-area_start_hp = 1
+has_new_zone = true
+grid_color = Color(0.5464291, 0, 0, 1)
+area_start_hp = 20
 destroy_blocks = [NodePath("DestustableBlocks")]
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone7" index="1" unique_id=111973379]
-visible = true
 position = Vector2(4, 24)
 shape = SubResource("RectangleShape2D_2h7am")
 
@@ -114,33 +112,30 @@ tile_map_data = PackedByteArray("AAABABwAAAAAAAAAAAABAB0AAAAAAAAAAAABAB4AAAAAAAA
 
 [node name="Destroy_zone8" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="7" unique_id=1803909979 instance=ExtResource("2_h8806")]
 position = Vector2(288, 120)
-grid_color = Color(0.40580523, 0.017825536, 0.36695826, 1)
-area_start_hp = 40
+grid_color = Color(0.5464291, 0, 0, 1)
+area_start_hp = 20
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone8" index="1" unique_id=111973379]
-visible = true
 position = Vector2(8, 24)
 shape = SubResource("RectangleShape2D_2h7am")
 
 [node name="Destroy_zone9" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="8" unique_id=1063319293 instance=ExtResource("2_h8806")]
 position = Vector2(40, 208)
 is_infinite = true
-grid_color = Color(0.19076231, 0.19076234, 0.19076231, 1)
-area_start_hp = 40
+grid_color = Color(0.5464291, 0, 0, 1)
+area_start_hp = 20
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone9" index="1" unique_id=111973379]
-visible = true
 position = Vector2(4, 8)
 shape = SubResource("RectangleShape2D_epxfk")
 
 [node name="Destroy_zone10" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="9" unique_id=1413261629 instance=ExtResource("2_h8806")]
 position = Vector2(264, 208)
 is_infinite = true
-grid_color = Color(0.19076231, 0.19076234, 0.19076231, 1)
-area_start_hp = 40
+grid_color = Color(0.5464291, 0, 0, 1)
+area_start_hp = 20
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone10" index="1" unique_id=111973379]
-visible = true
 position = Vector2(4, 8)
 shape = SubResource("RectangleShape2D_ipqvp")
 
