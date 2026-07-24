@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bko3gw82t0jff"]
+
+[ext_resource type="Texture2D" uid="uid://bmhbvbk8mvwg6" path="res://Sprites/pop/pop_0001.png" id="1_dw0i8"]
+[ext_resource type="Texture2D" uid="uid://crnun66wnecyn" path="res://Sprites/pop/pop_0002.png" id="2_ie15q"]
+[ext_resource type="Texture2D" uid="uid://co70gg2n5dfgg" path="res://Sprites/pop/pop_0003.png" id="3_acoxs"]
+[ext_resource type="Texture2D" uid="uid://byda84t5bixt7" path="res://Sprites/pop/pop_0004.png" id="4_gmrwc"]
+[ext_resource type="Texture2D" uid="uid://4xrae65ruuye" path="res://Sprites/pop/pop_0005.png" id="5_c3k5t"]
+[ext_resource type="Texture2D" uid="uid://c8h36hjyice8a" path="res://Sprites/pop/pop_0006.png" id="6_726cc"]
+[ext_resource type="Script" uid="uid://dh5j1dyy1mecn" path="res://Scripts/pop_ball_effect.gd" id="7_ie15q"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w2ey5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_dw0i8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ie15q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_acoxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gmrwc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_c3k5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_726cc")
+}],
+"loop": false,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="pop_ball" type="AnimatedSprite2D" unique_id=2026300512]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_w2ey5")
+autoplay = "default"
+frame = 5
+frame_progress = 1.0
+script = ExtResource("7_ie15q")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

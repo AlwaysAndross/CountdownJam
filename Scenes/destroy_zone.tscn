@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://mhh35w6pb8ph"]
+
+[ext_resource type="Shader" uid="uid://b7glinmnle0gn" path="res://shaders/move_texture.gdshader" id="2_csiu4"]
+[ext_resource type="Texture2D" uid="uid://b581ey3j78sd7" path="res://Sprites/checker.png" id="2_vwddc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tybu2"]
+shader = ExtResource("2_csiu4")
+shader_parameter/rotate_degree = 0.0
+shader_parameter/move_degree = 57.70000085979924
+shader_parameter/speed = 0.10000000475
+shader_parameter/scale = 0.499999988824
+shader_parameter/gap = Vector2(0, 0)
+shader_parameter/node_scale = Vector2(0.5, 0.5)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_csiu4"]
+blend_mode = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fm10b"]
+size = Vector2(8, 8)
+
+[node name="Gravity_zone" type="Area2D" unique_id=163085372]
+collision_layer = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1453159832]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_tybu2")
+texture = ExtResource("2_vwddc")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 8, 8)
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D" unique_id=1850986121]
+clip_children = 2
+material = SubResource("CanvasItemMaterial_csiu4")
+offset_right = 8.0
+offset_bottom = 8.0
+color = Color(0.08880334, 0.15692651, 0.38256687, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=111973379]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_fm10b")
+debug_color = Color(0.9213405, 0.21114498, 0.47091383, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

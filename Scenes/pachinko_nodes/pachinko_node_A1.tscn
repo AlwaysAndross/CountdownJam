@@ -1,0 +1,167 @@
+[gd_scene format=4 uid="uid://4qw1xaahfcem"]
+
+[ext_resource type="PackedScene" uid="uid://c8bhwwnd6v60v" path="res://Scenes/pachinko_nodes/pachinko_node_DEFAULT.tscn" id="1_p72r3"]
+[ext_resource type="PackedScene" uid="uid://mhh35w6pb8ph" path="res://Scenes/destroy_zone.tscn" id="2_h4fh0"]
+[ext_resource type="PackedScene" uid="uid://4jb43jt7j1wt" path="res://Scenes/cannon.tscn" id="3_ux5gs"]
+[ext_resource type="Texture2D" uid="uid://b3304b2vdbjrj" path="res://Sprites/Block.png" id="4_3lpfl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ux5gs"]
+size = Vector2(24, 24)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3lpfl"]
+texture = ExtResource("4_3lpfl")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -4, 0, -4, 3, -3, 4, -2, 4, 1, 3, 3, 0, 4, 0, 4, -3, 3, -4, 2, -4, -2, -3, -3)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -3, 0, -3, 3, -2, 4, 0, 4, 1, 4, 4, -4, 4, -4, 0, -3, -2)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(4, -3, 4, -3, 4, 4, -4, 4, -4, 1, -1, -2)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(1, -2, 4, 1, 4, 4, -4, 4, -4, -3, -4, -3)
+0:3/0 = 0
+0:3/0/physics_layer_1/polygon_0/points = PackedVector2Array(-4, -3, 4, -3, 4, 4, -4, 4)
+0:3/0/physics_layer_1/polygon_0/one_way = true
+0:3/0/physics_layer_1/polygon_0/one_way_margin = 2.0
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(4, -4, 4, 4, -4, 4)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, 4, -4, 4)
+
+[sub_resource type="TileSet" id="TileSet_iskk3"]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 2
+physics_layer_1/collision_layer = 4
+sources/0 = SubResource("TileSetAtlasSource_3lpfl")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4fh0"]
+size = Vector2(24, 24)
+
+[node name="pachinko_node_A1" unique_id=501276314 instance=ExtResource("1_p72r3")]
+Pnode_ID = "A1"
+default = true
+
+[node name="NinePatchRect" parent="." index="0" unique_id=503802194]
+offset_right = 264.0
+offset_bottom = 264.0
+
+[node name="TileLayer" parent="." index="1" unique_id=1196776029]
+tile_map_data = PackedByteArray("AAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAABAAUAAAAAAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAALAAEAAAAAAAAAAAAMAAEAAAAAAAAAAAANAAEAAAAAAAAAAAAOAAEAAAAAAAAAAAAPAAEAAAAAAAAAAAAQAAEAAAAAAAAAAAARAAEAAAAAAAAAAAASAAEAAAAAAAAAAAATAAEAAAAAAAAAAAAUAAEAAAAAAAAAAAAVAAEAAAAAAAAAAAAWAAEAAAAAAAAAAAAXAAEAAAAAAAAAAAAYAAEAAAAAAAAAAAAcAAEAAAAAAAAAAAAdAAEAAAAAAAAAAAAeAAEAAAAAAAAAAAAfAAEAAAAAAAAAAAABAAgAAAAAAAAAAAABAAkAAAAAAAAAAAABAAoAAAAAAAAAAAABAAsAAAAAAAAAAAABAAwAAAAAAAAAAAABAA0AAAAAAAAAAAABAA4AAAAAAAAAAAABAA8AAAAAAAAAAAABABAAAAAAAAAAAAABABEAAAAAAAAAAAABABIAAAAAAAAAAAABABMAAAAAAAAAAAABABQAAAAAAAAAAAABABUAAAAAAAAAAAABABYAAAAAAAAAAAABABcAAAAAAAAAAAABABgAAAAAAAAAAAABABkAAAAAAAAAAAABABoAAAAAAAAAAAABABsAAAAAAAAAAAABABwAAAAAAAAAAAABAB0AAAAAAAAAAAABAB4AAAAAAAAAAAAKAB4AAAAAAAAAAAAWAB4AAAAAAAAAAAAKAB0AAAAAAAAAAAAKABwAAAAAAAAAAAASABwAAAAAAAAAAAASAB0AAAAAAAAAAAASAB4AAAAAAAAAAAAWABwAAAAAAAAAAAAWAB0AAAAAAAAAAAAKABsAAAAAAAAAAAASABoAAAAAAAAAAAASABsAAAAAAAAAAAAWABoAAAAAAAAAAAAWABsAAAAAAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAAZAAEAAAAAAAAAAAAaAAEAAAAAAAAAAAAbAAEAAAAAAAAAAAASABkAAAAAAAAAAAASABgAAAAAAAAAAAAWABkAAAACAAAAAAAKABoAAAAAAAAAAAAGAB4AAAAAAAAAAAAOAB4AAAAAAAAAAAAaAB4AAAAAAAAAAAAfAB4AAAAAAAAAAAAfAAIAAAAAAAAAAAAfAAMAAAAAAAAAAAAfAAQAAAAAAAAAAAAfAAUAAAAAAAAAAAAfAAYAAAAAAAAAAAAfAAcAAAAAAAAAAAAfAAgAAAAAAAAAAAAfAAkAAAAAAAAAAAAfAAoAAAAAAAAAAAAfAAsAAAAAAAAAAAAfAAwAAAAAAAAAAAAfAA0AAAAAAAAAAAAfAA4AAAAAAAAAAAAfAA8AAAAAAAAAAAAfABAAAAAAAAAAAAAfABEAAAAAAAAAAAAfABIAAAAAAAAAAAAfABMAAAAAAAAAAAAfABQAAAAAAAAAAAAfABUAAAAAAAAAAAAfABYAAAAAAAAAAAAfABcAAAAAAAAAAAAfABgAAAAAAAAAAAAfABkAAAAAAAAAAAAfABoAAAAAAAAAAAAfABsAAAAAAAAAAAAfABwAAAAAAAAAAAAfAB0AAAAAAAAAAAAfAB8AAAAAAAAAAAABAB8AAAAAAAAAAAAGAB8AAAAAAAAAAAAKAB8AAAAAAAAAAAAOAB8AAAAAAAAAAAASAB8AAAAAAAAAAAAWAB8AAAAAAAAAAAAaAB8AAAAAAAAAAAAGABsAAAACAAAAAAAGABwAAAAAAAAAAAAGAB0AAAAAAAAAAAAKABkAAAACAAAAAAAOABcAAAACAAAAAAAOABgAAAAAAAAAAAAOABkAAAAAAAAAAAAOABoAAAAAAAAAAAAOABsAAAAAAAAAAAAOABwAAAAAAAAAAAAOAB0AAAAAAAAAAAASABcAAAACAAAAAAAaABsAAAACAAAAAAAaABwAAAAAAAAAAAAaAB0AAAAAAAAAAAASAAoAAAABAAAAAAAQAAwAAAABAAAAAAAMAAwAAAABAAAAAAAUAAwAAAABAAAAAAAOAA4AAAABAAAAAAASAA4AAAABAAAAAAAMABAAAAABAAAAAAAUABAAAAABAAAAAAAQABAAAAABAAAAAAAKAA4AAAABAAAAAAAWAA4AAAABAAAAAAAIABAAAAABAAAAAAAYABAAAAABAAAAAAAKABIAAAABAAAAAAAOABIAAAABAAAAAAASABIAAAABAAAAAAAWABIAAAABAAAAAAAMABQAAAABAAAAAAAUABQAAAABAAAAAAAQABUAAAABAAAAAAAQAAgAAAABAAAAAAAOAAoAAAABAAAAAAA=")
+
+[node name="Destroy_zone" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="0" unique_id=163085372 instance=ExtResource("2_h4fh0")]
+position = Vector2(16, 224)
+
+[node name="CollisionShape2D" parent="DestoryZones/Destroy_zone" index="1" unique_id=111973379]
+position = Vector2(16, 12)
+shape = SubResource("RectangleShape2D_ux5gs")
+
+[node name="DestustableBlocks" type="TileMapLayer" parent="DestoryZones/Destroy_zone" index="2" unique_id=218622363]
+z_index = 4
+texture_filter = 1
+position = Vector2(-16, -224)
+tile_map_data = PackedByteArray("AAACAB8AAAAAAAAAAAADAB8AAAAAAAAAAAAEAB8AAAAAAAAAAAAFAB8AAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_iskk3")
+physics_quadrant_size = 8
+
+[node name="Destroy_zone2" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="1" unique_id=956450642 instance=ExtResource("2_h4fh0")]
+position = Vector2(216, 224)
+
+[node name="CollisionShape2D" parent="DestoryZones/Destroy_zone2" index="1" unique_id=111973379]
+position = Vector2(12, 12)
+shape = SubResource("RectangleShape2D_ux5gs")
+
+[node name="DestustableBlocks7" type="TileMapLayer" parent="DestoryZones/Destroy_zone2" index="2" unique_id=1142641223]
+z_index = 4
+texture_filter = 1
+position = Vector2(-216, -224)
+tile_map_data = PackedByteArray("AAAbAB8AAAAAAAAAAAAcAB8AAAAAAAAAAAAdAB8AAAAAAAAAAAAeAB8AAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_iskk3")
+physics_quadrant_size = 8
+
+[node name="Destroy_zone3" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="2" unique_id=293488267 instance=ExtResource("2_h4fh0")]
+position = Vector2(184, 224)
+
+[node name="CollisionShape2D" parent="DestoryZones/Destroy_zone3" index="1" unique_id=111973379]
+position = Vector2(12, 12)
+shape = SubResource("RectangleShape2D_h4fh0")
+
+[node name="DestustableBlocks6" type="TileMapLayer" parent="DestoryZones/Destroy_zone3" index="2" unique_id=1893103936]
+z_index = 4
+texture_filter = 1
+position = Vector2(-184, -224)
+tile_map_data = PackedByteArray("AAAXAB8AAAAAAAAAAAAYAB8AAAAAAAAAAAAZAB8AAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_iskk3")
+physics_quadrant_size = 8
+
+[node name="Destroy_zone4" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="3" unique_id=1335759674 instance=ExtResource("2_h4fh0")]
+position = Vector2(56, 224)
+
+[node name="CollisionShape2D" parent="DestoryZones/Destroy_zone4" index="1" unique_id=111973379]
+position = Vector2(12, 12)
+shape = SubResource("RectangleShape2D_h4fh0")
+
+[node name="DestustableBlocks2" type="TileMapLayer" parent="DestoryZones/Destroy_zone4" index="2" unique_id=835812617]
+z_index = 4
+texture_filter = 1
+position = Vector2(-56, -224)
+tile_map_data = PackedByteArray("AAAHAB8AAAAAAAAAAAAIAB8AAAAAAAAAAAAJAB8AAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_iskk3")
+physics_quadrant_size = 8
+
+[node name="Destroy_zone5" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="4" unique_id=1153396776 instance=ExtResource("2_h4fh0")]
+position = Vector2(88, 224)
+
+[node name="CollisionShape2D" parent="DestoryZones/Destroy_zone5" index="1" unique_id=111973379]
+position = Vector2(12, 12)
+shape = SubResource("RectangleShape2D_h4fh0")
+
+[node name="DestustableBlocks3" type="TileMapLayer" parent="DestoryZones/Destroy_zone5" index="2" unique_id=967185591]
+z_index = 4
+texture_filter = 1
+position = Vector2(-88, -224)
+tile_map_data = PackedByteArray("AAALAB8AAAAAAAAAAAAMAB8AAAAAAAAAAAANAB8AAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_iskk3")
+physics_quadrant_size = 8
+
+[node name="Destroy_zone6" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="5" unique_id=363700687 instance=ExtResource("2_h4fh0")]
+position = Vector2(152, 224)
+
+[node name="CollisionShape2D" parent="DestoryZones/Destroy_zone6" index="1" unique_id=111973379]
+position = Vector2(12, 12)
+shape = SubResource("RectangleShape2D_h4fh0")
+
+[node name="DestustableBlocks5" type="TileMapLayer" parent="DestoryZones/Destroy_zone6" index="2" unique_id=1958462335]
+z_index = 4
+texture_filter = 1
+position = Vector2(-152, -224)
+tile_map_data = PackedByteArray("AAATAB8AAAAAAAAAAAAUAB8AAAAAAAAAAAAVAB8AAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_iskk3")
+physics_quadrant_size = 8
+
+[node name="Destroy_zone7" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="6" unique_id=250722229 instance=ExtResource("2_h4fh0")]
+position = Vector2(120, 224)
+
+[node name="CollisionShape2D" parent="DestoryZones/Destroy_zone7" index="1" unique_id=111973379]
+position = Vector2(12, 12)
+shape = SubResource("RectangleShape2D_h4fh0")
+
+[node name="DestustableBlocks4" type="TileMapLayer" parent="DestoryZones/Destroy_zone7" index="2" unique_id=824655256]
+z_index = 4
+texture_filter = 1
+position = Vector2(-120, -224)
+tile_map_data = PackedByteArray("AAAPAB8AAAAAAAAAAAAQAB8AAAAAAAAAAAARAB8AAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_iskk3")
+physics_quadrant_size = 8
+
+[node name="Cannon" parent="." index="3" unique_id=1427740003 instance=ExtResource("3_ux5gs")]
+position = Vector2(132, 24)
+
+[editable path="DestoryZones/Destroy_zone"]
+[editable path="DestoryZones/Destroy_zone2"]
+[editable path="DestoryZones/Destroy_zone3"]
+[editable path="DestoryZones/Destroy_zone4"]
+[editable path="DestoryZones/Destroy_zone5"]
+[editable path="DestoryZones/Destroy_zone6"]
+[editable path="DestoryZones/Destroy_zone7"]

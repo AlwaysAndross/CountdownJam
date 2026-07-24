@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://xe8osuy1i3w6"]
+
+[ext_resource type="PackedScene" uid="uid://4qw1xaahfcem" path="res://Scenes/pachinko_nodes/pachinko_node_A1.tscn" id="2_kln2b"]
+[ext_resource type="PackedScene" uid="uid://cdeh5s6pi3wrn" path="res://Scenes/pachinko_nodes/pachinko_node_A2.tscn" id="2_rgh2o"]
+[ext_resource type="PackedScene" uid="uid://16evpsm5pr4x" path="res://Scenes/pachinko_nodes/pachinko_node_A3.tscn" id="3_kln2b"]
+
+[node name="Main" type="Node2D" unique_id=1292898817]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1070146118]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=642415117]
+z_index = -2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.014729318, 0.00022873002, 0.0019600198, 1)
+
+[node name="PNodes" type="Node2D" parent="." unique_id=233152571]
+
+[node name="pachinko_node_A1" parent="PNodes" unique_id=501276314 instance=ExtResource("2_kln2b")]
+position = Vector2(824, 8)
+
+[node name="pachinko_node_A2" parent="PNodes" unique_id=1162443320 instance=ExtResource("2_rgh2o")]
+position = Vector2(800, 272)
+
+[node name="pachinko_node_A3" parent="PNodes" unique_id=807613302 instance=ExtResource("3_kln2b")]
+position = Vector2(648, 272)
+activate_position = Vector2i(648, 272)
+
+[node name="Balls" type="Node2D" parent="." unique_id=2062641376]

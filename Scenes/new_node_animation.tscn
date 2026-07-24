@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://cafli354g20y0"]
+
+[ext_resource type="Script" uid="uid://b3dbqrbgasc0c" path="res://Scripts/new_node_animation.gd" id="1_ftmp7"]
+[ext_resource type="Texture2D" uid="uid://c6drjulnngw02" path="res://Sprites/border.png" id="2_dqfg3"]
+[ext_resource type="Shader" uid="uid://jofk8t85slvf" path="res://shaders/flash.gdshader" id="2_yijcs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bdktx"]
+shader = ExtResource("2_yijcs")
+shader_parameter/flash_color = Color(0.9901342, 0.50037146, 0.57321054, 1)
+shader_parameter/flash_value = 0.0
+
+[sub_resource type="Animation" id="Animation_dqfg3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NinePatchRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NinePatchRect:material:shader_parameter/flash_value")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NinePatchRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yijcs"]
+resource_name = "finish_pnode"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NinePatchRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.10000001, 0.20000002),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 4), Vector2(0, -1), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NinePatchRect:material:shader_parameter/flash_value")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"make_visible"
+}, {
+"args": [],
+"method": &"destoryself"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NinePatchRect:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.16666667, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bdktx"]
+_data = {
+&"RESET": SubResource("Animation_dqfg3"),
+&"finish_pnode": SubResource("Animation_yijcs")
+}
+
+[node name="New_Node_Animation" type="Node2D" unique_id=1402683044]
+z_index = 6
+script = ExtResource("1_ftmp7")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=47873669]
+texture_filter = 1
+material = SubResource("ShaderMaterial_bdktx")
+offset_right = 232.0
+offset_bottom = 152.0
+texture = ExtResource("2_dqfg3")
+region_rect = Rect2(0, 0, 11, 12)
+patch_margin_left = 5
+patch_margin_top = 5
+patch_margin_right = 5
+patch_margin_bottom = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=19967200]
+libraries/ = SubResource("AnimationLibrary_bdktx")

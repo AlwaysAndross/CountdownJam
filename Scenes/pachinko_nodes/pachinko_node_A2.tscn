@@ -1,0 +1,167 @@
+[gd_scene format=4 uid="uid://cdeh5s6pi3wrn"]
+
+[ext_resource type="PackedScene" uid="uid://c8bhwwnd6v60v" path="res://Scenes/pachinko_nodes/pachinko_node_DEFAULT.tscn" id="1_1tngc"]
+[ext_resource type="PackedScene" uid="uid://mhh35w6pb8ph" path="res://Scenes/destroy_zone.tscn" id="2_h8806"]
+[ext_resource type="PackedScene" uid="uid://bmidt78tmipem" path="res://Scenes/one_way.tscn" id="2_kdj3b"]
+[ext_resource type="PackedScene" uid="uid://bkw7vvsb8cdbl" path="res://Scenes/destustable_blocks.tscn" id="3_5bc42"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h8806"]
+size = Vector2(24, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gtujo"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5bc42"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vjt6d"]
+size = Vector2(32, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l87bp"]
+size = Vector2(8, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2h7am"]
+size = Vector2(8, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epxfk"]
+size = Vector2(8, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipqvp"]
+size = Vector2(8, 16)
+
+[node name="pachinko_node_A2" unique_id=501276314 instance=ExtResource("1_1tngc")]
+activate_position = Vector2i(800, 272)
+Pnode_ID = "A2"
+
+[node name="NinePatchRect" parent="." index="0" unique_id=503802194]
+offset_right = 312.0
+offset_bottom = 240.0
+
+[node name="TileLayer" parent="." index="1" unique_id=1196776029]
+tile_map_data = PackedByteArray("AAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAABAAUAAAAAAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAANAAEAAAAAAAAAAAARAAEAAAAAAAAAAAAVAAEAAAAAAAAAAAAdAAEAAAAAAAAAAAAiAAEAAAAAAAAAAAAiABMAAAAFAAAAAFAiABQAAAAAAAAAAAAiABUAAAAGAAAAADAiABkAAAAFAAAAAAAiABoAAAAAAAAAAAAiABsAAAAAAAAAAAAiABwAAAAAAAAAAAABAAgAAAAAAAAAAAABAAkAAAAAAAAAAAABAAoAAAAAAAAAAAABAAsAAAAAAAAAAAABAAwAAAAAAAAAAAABAA0AAAAAAAAAAAABAA4AAAAAAAAAAAABABUAAAAAAAAAAAABABYAAAAAAAAAAAABABcAAAAAAAAAAAABABgAAAAAAAAAAAABABkAAAAAAAAAAAABABoAAAAAAAAAAAABABsAAAAAAAAAAAABABwAAAAAAAAAAAAFABwAAAAAAAAAAAANABwAAAAAAAAAAAARABwAAAAAAAAAAAAZABwAAAAAAAAAAAAeABwAAAAAAAAAAAAKABwAAAAAAAAAAAASABwAAAAAAAAAAAAWABwAAAAAAAAAAAANABoAAAAAAAAAAAANABsAAAAAAAAAAAARABoAAAAAAAAAAAARABsAAAAAAAAAAAASABoAAAAAAAAAAAASABsAAAAAAAAAAAAZABsAAAAAAAAAAAAJAAEAAAAAAAAAAAAZAAEAAAAAAAAAAAARABkAAAAFAAAAAAASABkAAAAAAAAAAAASABgAAAAAAAAAAAAZABoAAAAAAAAAAAAjAAEAAAAAAAAAAAAkAAEAAAAAAAAAAAAlAAEAAAAAAAAAAAAlAAIAAAAAAAAAAAAlAAMAAAAAAAAAAAAlAAQAAAAAAAAAAAAlAAUAAAAAAAAAAAAlAAYAAAAAAAAAAAAlAAcAAAAAAAAAAAAlAAgAAAAAAAAAAAAlAAkAAAAAAAAAAAAlAAoAAAAAAAAAAAAlAAsAAAAAAAAAAAAlAAwAAAAAAAAAAAAlAA0AAAAAAAAAAAAJAAAAAAAAAAAAAAAJAP//AAAAAAAAAAAEAP//AAAAAAAAAAAEAAAAAAAAAAAAAAANAAAAAAAAAAAAAAANAP//AAAAAAAAAAARAAAAAAAAAAAAAAARAP//AAAAAAAAAAAVAP//AAAAAAAAAAAVAAAAAAAAAAAAAAAZAP//AAAAAAAAAAAZAAAAAAAAAAAAAAAdAP//AAAAAAAAAAAdAAAAAAAAAAAAAAARAAIAAAAAAAAAAAARAAMAAAAAAAAAAAAVAAIAAAAAAAAAAAAVAAMAAAAAAAAAAAAVAAQAAAAAAAAAAAARAAQAAAAAAAAAAAANAAIAAAAAAAAAAAANAAMAAAACAAAAADAJAAIAAAACAAAAADAZAAIAAAAAAAAAAAACABwAAAAAAAAAAAADABwAAAAAAAAAAAAEABwAAAAAAAAAAAAIABwAAAAAAAAAAAALABwAAAAAAAAAAAAMABwAAAAAAAAAAAAOABwAAAAAAAAAAAAUABwAAAAAAAAAAAAVABwAAAAAAAAAAAAYABwAAAAAAAAAAAAaABwAAAAAAAAAAAAbABwAAAAAAAAAAAAlABwAAAAAAAAAAAAlABsAAAAAAAAAAAAlABoAAAAAAAAAAAAlABkAAAAAAAAAAAAlABgAAAAAAAAAAAAlABcAAAAAAAAAAAAJAAYAAAABAAAAAAALAAgAAAABAAAAAAAJAAoAAAABAAAAAAAHAAgAAAABAAAAAAALAAwAAAABAAAAAAAHAAwAAAABAAAAAAAJAA4AAAABAAAAAAANAAYAAAABAAAAAAAPAAgAAAABAAAAAAANAAoAAAABAAAAAAAPAAwAAAABAAAAAAANAA4AAAABAAAAAAARAAoAAAABAAAAAAAHABAAAAABAAAAAAALABAAAAABAAAAAAAJABIAAAABAAAAAAAVAAoAAAABAAAAAAAXAAgAAAABAAAAAAAZAAYAAAABAAAAAAAdAAYAAAABAAAAAAAbAAgAAAABAAAAAAAZAAoAAAABAAAAAAAdAAoAAAABAAAAAAAXAAwAAAABAAAAAAAbAAwAAAABAAAAAAAfAAgAAAABAAAAAAAfAAwAAAABAAAAAAAdAA4AAAABAAAAAAAZAA4AAAABAAAAAAAbABAAAAABAAAAAAAfABAAAAABAAAAAAAdABIAAAABAAAAAAAFAAoAAAABAAAAAAAFAA4AAAABAAAAAAAhAA4AAAABAAAAAAAhAAoAAAABAAAAAAAiAP//AAAAAAAAAAAiAAAAAAAAAAAAAAAZAAMAAAACAAAAADAdAAIAAAACAAAAADARAAUAAAAAAAAAAAAVAAUAAAAAAAAAAAARAAYAAAAAAAAAAAAVAAYAAAAAAAAAAAAVAAcAAAADAAAAADARAAcAAAAEAAAAADACABcAAAAAAAAAAAADABgAAAAGAAAAAAAEABkAAAAGAAAAAAACABgAAAAAAAAAAAACABkAAAAAAAAAAAACABoAAAAAAAAAAAACABsAAAAAAAAAAAADABkAAAAAAAAAAAADABoAAAAAAAAAAAADABsAAAAAAAAAAAAEABoAAAAAAAAAAAAEABsAAAAAAAAAAAAMABsAAAAAAAAAAAAMABoAAAAAAAAAAAAMABkAAAAAAAAAAAAMABgAAAAAAAAAAAAMABcAAAADAAAAAAANABgAAAAAAAAAAAANABkAAAAAAAAAAAANABcAAAAEAAAAAAAUABcAAAAAAAAAAAAUABgAAAAAAAAAAAAUABkAAAAAAAAAAAAUABoAAAAAAAAAAAAUABsAAAAAAAAAAAAUABYAAAACAAAAAAASABYAAAACAAAAAAASABcAAAAAAAAAAAAOABsAAAAAAAAAAAAVABsAAAAAAAAAAAALABsAAAAAAAAAAAAYABsAAAAAAAAAAAAZABcAAAADAAAAAAAZABgAAAAAAAAAAAAZABkAAAAAAAAAAAAaABcAAAAEAAAAAAAaABgAAAAAAAAAAAAaABkAAAAAAAAAAAAaABoAAAAAAAAAAAAaABsAAAAAAAAAAAAbABsAAAAAAAAAAAAjABgAAAAFAAAAAAAkABcAAAAAAAAAAAAjABwAAAAAAAAAAAAkABwAAAAAAAAAAAAkABsAAAAAAAAAAAAjABsAAAAAAAAAAAAjABoAAAAAAAAAAAAkABoAAAAAAAAAAAAkABkAAAAAAAAAAAAjABkAAAAAAAAAAAAkABgAAAAAAAAAAAAlABYAAAAAAAAAAAAlAA4AAAAAAAAAAAAlABUAAAAAAAAAAAACABYAAAAAAAAAAAACABUAAAAAAAAAAAACAAwAAAADAAAAAFACAA0AAAAAAAAAAAAkAAwAAAAEAAAAAGAkAA0AAAAAAAAAAAAkABUAAAAAAAAAAAAkABYAAAAAAAAAAAALABoAAAAAAAAAAAAYABoAAAAAAAAAAAAVABoAAAAAAAAAAAAOABoAAAAAAAAAAAAbABoAAAAAAAAAAAARAA4AAAABAAAAAAAVAA4AAAABAAAAAAARABIAAAABAAAAAAAVABIAAAABAAAAAAAPABAAAAABAAAAAAAXABAAAAABAAAAAAATABQAAAABAAAAAAACAA4AAAAAAAAAAAAkAA4AAAAAAAAAAAADABQAAAAFAAAAAAADABUAAAAAAAAAAAAEABQAAAAAAAAAAAAFABMAAAAAAAAAAAAEABMAAAAFAAAAAAAFABIAAAAFAAAAAAADABYAAAAGAAAAAFAEABUAAAAGAAAAAFAFABQAAAAGAAAAAFAjABQAAAAFAAAAAFAhABIAAAAFAAAAAFAhABMAAAAAAAAAAAAjABUAAAAAAAAAAAAhABQAAAAGAAAAADAjABYAAAAGAAAAADAGABIAAAAFAAAAAFAGABMAAAAGAAAAAFAgABIAAAAFAAAAAAAgABMAAAAGAAAAADAGABwAAAAAAAAAAAAHABwAAAAAAAAAAAAfABwAAAAAAAAAAAAgABwAAAAAAAAAAAAhABwAAAAAAAAAAAAdABwAAAAAAAAAAAAcABwAAAAAAAAAAAAJABwAAAAAAAAAAAAPABwAAAAAAAAAAAAQABwAAAAAAAAAAAATABwAAAAAAAAAAAAXABwAAAAAAAAAAAAOABkAAAAGAAAAAAAVABkAAAAGAAAAAAAbABkAAAAGAAAAAAALABkAAAAFAAAAAAAYABkAAAAFAAAAAAAgABoAAAAAAAAAAAAgABsAAAAAAAAAAAAGABoAAAAAAAAAAAAGABsAAAAAAAAAAAA=")
+
+[node name="Destroy_zone" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="0" unique_id=163085372 instance=ExtResource("2_h8806")]
+position = Vector2(144, 40)
+grid_color = Color(0.09104455, 0.25564402, 0.3446429, 1)
+area_start_hp = 5
+
+[node name="CollisionShape2D" parent="DestoryZones/Destroy_zone" index="1" unique_id=111973379]
+visible = true
+position = Vector2(12, 8)
+shape = SubResource("RectangleShape2D_h8806")
+
+[node name="Destroy_zone2" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="1" unique_id=166806764 instance=ExtResource("2_h8806")]
+position = Vector2(56, 208)
+area_start_hp = 30
+
+[node name="CollisionShape2D" parent="DestoryZones/Destroy_zone2" index="1" unique_id=111973379]
+visible = true
+position = Vector2(16, 8)
+shape = SubResource("RectangleShape2D_gtujo")
+
+[node name="Destroy_zone3" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="2" unique_id=31122161 instance=ExtResource("2_h8806")]
+position = Vector2(120, 208)
+area_start_hp = 20
+
+[node name="CollisionShape2D" parent="DestoryZones/Destroy_zone3" index="1" unique_id=111973379]
+visible = true
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_5bc42")
+
+[node name="Destroy_zone4" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="3" unique_id=694779952 instance=ExtResource("2_h8806")]
+position = Vector2(176, 208)
+area_start_hp = 20
+
+[node name="CollisionShape2D" parent="DestoryZones/Destroy_zone4" index="1" unique_id=111973379]
+visible = true
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_5bc42")
+
+[node name="Destroy_zone5" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="4" unique_id=5817104 instance=ExtResource("2_h8806")]
+position = Vector2(224, 208)
+area_start_hp = 30
+
+[node name="CollisionShape2D" parent="DestoryZones/Destroy_zone5" index="1" unique_id=111973379]
+visible = true
+position = Vector2(16, 8)
+shape = SubResource("RectangleShape2D_vjt6d")
+
+[node name="Destroy_zone6" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="5" unique_id=2141132087 instance=ExtResource("2_h8806")]
+position = Vector2(152, 208)
+grid_color = Color(0.09104455, 0.25564402, 0.3446429, 1)
+area_start_hp = 30
+
+[node name="CollisionShape2D" parent="DestoryZones/Destroy_zone6" index="1" unique_id=111973379]
+visible = true
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_l87bp")
+
+[node name="Destroy_zone7" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="6" unique_id=337732987 node_paths=PackedStringArray("destroy_blocks") instance=ExtResource("2_h8806")]
+position = Vector2(16, 120)
+new_zone = "A3"
+grid_color = Color(0.40580523, 0.017825536, 0.36695826, 1)
+area_start_hp = 1
+destroy_blocks = [NodePath("DestustableBlocks")]
+
+[node name="CollisionShape2D" parent="DestoryZones/Destroy_zone7" index="1" unique_id=111973379]
+visible = true
+position = Vector2(4, 24)
+shape = SubResource("RectangleShape2D_2h7am")
+
+[node name="DestustableBlocks" parent="DestoryZones/Destroy_zone7" index="3" unique_id=320594656 instance=ExtResource("3_5bc42")]
+position = Vector2(-16, -224)
+tile_map_data = PackedByteArray("AAABABwAAAAAAAAAAAABAB0AAAAAAAAAAAABAB4AAAAAAAAAAAABAB8AAAAAAAAAAAABACAAAAAAAAAAAAABACEAAAAAAAAAAAA=")
+
+[node name="Destroy_zone8" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="7" unique_id=1803909979 instance=ExtResource("2_h8806")]
+position = Vector2(288, 120)
+grid_color = Color(0.40580523, 0.017825536, 0.36695826, 1)
+area_start_hp = 40
+
+[node name="CollisionShape2D" parent="DestoryZones/Destroy_zone8" index="1" unique_id=111973379]
+visible = true
+position = Vector2(8, 24)
+shape = SubResource("RectangleShape2D_2h7am")
+
+[node name="Destroy_zone9" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="8" unique_id=1063319293 instance=ExtResource("2_h8806")]
+position = Vector2(40, 208)
+is_infinite = true
+grid_color = Color(0.19076231, 0.19076234, 0.19076231, 1)
+area_start_hp = 40
+
+[node name="CollisionShape2D" parent="DestoryZones/Destroy_zone9" index="1" unique_id=111973379]
+visible = true
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_epxfk")
+
+[node name="Destroy_zone10" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="9" unique_id=1413261629 instance=ExtResource("2_h8806")]
+position = Vector2(264, 208)
+is_infinite = true
+grid_color = Color(0.19076231, 0.19076234, 0.19076231, 1)
+area_start_hp = 40
+
+[node name="CollisionShape2D" parent="DestoryZones/Destroy_zone10" index="1" unique_id=111973379]
+visible = true
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_ipqvp")
+
+[node name="OneWay" parent="SpecialTiles" parent_id_path=PackedInt32Array(1531458723) index="0" unique_id=1176832367 instance=ExtResource("2_kdj3b")]
+collision_layer = 4
+
+[node name="TileMapLayer" parent="SpecialTiles/OneWay" index="0" unique_id=537609920]
+tile_map_data = PackedByteArray("AAAUAAcAAAAAAAMAAAATAAcAAAAAAAMAAAASAAcAAAAAAAMAAAA=")
+
+[node name="CollisionShape2D" parent="SpecialTiles/OneWay" index="1" unique_id=374406024]
+position = Vector2(156, 60)
+rotation = -3.1415925
+
+[editable path="DestoryZones/Destroy_zone"]
+[editable path="DestoryZones/Destroy_zone2"]
+[editable path="DestoryZones/Destroy_zone3"]
+[editable path="DestoryZones/Destroy_zone4"]
+[editable path="DestoryZones/Destroy_zone5"]
+[editable path="DestoryZones/Destroy_zone6"]
+[editable path="DestoryZones/Destroy_zone7"]
+[editable path="DestoryZones/Destroy_zone8"]
+[editable path="DestoryZones/Destroy_zone9"]
+[editable path="DestoryZones/Destroy_zone10"]
+[editable path="SpecialTiles/OneWay"]
