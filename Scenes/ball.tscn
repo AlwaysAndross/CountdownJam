@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b3304b2vdbjrj" path="res://Sprites/Block.png" id="1_d60mj"]
 [ext_resource type="Script" uid="uid://bbwxyw6kogr5l" path="res://Scripts/ball.gd" id="1_ij5cq"]
 [ext_resource type="PackedScene" uid="uid://bko3gw82t0jff" path="res://Scenes/pop_ball_effect.tscn" id="2_376qj"]
-[ext_resource type="AudioStream" uid="uid://cjin85ilmofu0" path="res://Sounds2/00C4_000A.wav" id="4_yk4cr"]
+[ext_resource type="AudioStream" uid="uid://d02yx3ih7irm3" path="res://Sounds2/Bounce.mp3" id="4_yk4cr"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ij5cq"]
 bounce = 1.0
@@ -35,6 +35,7 @@ shape = SubResource("CircleShape2D_d60mj")
 [node name="Bounce_Effect" type="AudioStreamPlayer" parent="." unique_id=41974532]
 stream = ExtResource("4_yk4cr")
 volume_db = -20.0
+pitch_scale = 1.03
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1889840968]
 
