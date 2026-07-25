@@ -1,0 +1,5 @@
+BPM: 100
+Time Signature: 3
+Length: 55 Bars
+Loop Start: Bar 27, Beat 1 (6,823,593 samples)
+Loop End: Bar 53, Beat 1 (13,650,048 samples)
