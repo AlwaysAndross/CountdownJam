@@ -29,7 +29,7 @@ position = Vector2(824, 8)
 position = Vector2(800, 272)
 
 [node name="pachinko_node_A3" parent="PNodes" unique_id=807613302 instance=ExtResource("3_kln2b")]
-position = Vector2(648, 272)
-activate_position = Vector2i(648, 272)
+position = Vector2(648, 32)
+activate_position = Vector2i(648, 32)
 
 [node name="Balls" type="Node2D" parent="." unique_id=2062641376]

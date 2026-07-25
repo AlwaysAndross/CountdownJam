@@ -55,7 +55,7 @@ position = Vector2(16, 224)
 new_zone = "A2"
 has_new_zone = true
 grid_color = Color(0.5464291, 0, 0, 1)
-area_start_hp = 20
+area_start_hp = 1
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone" index="1" unique_id=111973379]
 position = Vector2(16, 12)
@@ -74,7 +74,7 @@ position = Vector2(216, 224)
 new_zone = "A2"
 has_new_zone = true
 grid_color = Color(0.5464291, 0, 0, 1)
-area_start_hp = 20
+area_start_hp = 35
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone2" index="1" unique_id=111973379]
 position = Vector2(16, 12)
@@ -131,7 +131,7 @@ position = Vector2(88, 224)
 new_zone = "A2"
 has_new_zone = true
 grid_color = Color(0.5464291, 0, 0, 1)
-area_start_hp = 20
+area_start_hp = 15
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone5" index="1" unique_id=111973379]
 position = Vector2(12, 12)
@@ -150,7 +150,7 @@ position = Vector2(152, 224)
 new_zone = "A2"
 has_new_zone = true
 grid_color = Color(0.5464291, 0, 0, 1)
-area_start_hp = 20
+area_start_hp = 15
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone6" index="1" unique_id=111973379]
 position = Vector2(12, 12)
@@ -169,7 +169,7 @@ position = Vector2(120, 224)
 new_zone = "A2"
 has_new_zone = true
 grid_color = Color(0.5464291, 0, 0, 1)
-area_start_hp = 20
+area_start_hp = 5
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone7" index="1" unique_id=111973379]
 position = Vector2(12, 12)

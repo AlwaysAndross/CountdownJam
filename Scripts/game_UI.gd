@@ -11,6 +11,5 @@ func _ready() -> void:
 func update_number(value):
 	if value != 0:
 		hp_value -= value
-		print(hp_value)
 		human_hp.text = str(hp_value)
 		animation_player.play("update_anim")

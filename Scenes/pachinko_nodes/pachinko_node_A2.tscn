@@ -99,7 +99,7 @@ position = Vector2(16, 120)
 new_zone = "A3"
 has_new_zone = true
 grid_color = Color(0.5464291, 0, 0, 1)
-area_start_hp = 20
+area_start_hp = 1
 destroy_blocks = [NodePath("DestustableBlocks")]
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone7" index="1" unique_id=111973379]
