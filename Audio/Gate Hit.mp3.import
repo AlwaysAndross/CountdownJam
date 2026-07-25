@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://da7inm4a07lee"
+path="res://.godot/imported/Gate Hit.mp3-6ad425c2b627f8783819cab661d478b5.mp3str"
+
+[deps]
+
+source_file="res://Audio/Gate Hit.mp3"
+dest_files=["res://.godot/imported/Gate Hit.mp3-6ad425c2b627f8783819cab661d478b5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://fadjvymvga10"
+path="res://.godot/imported/Area Unlock.mp3-5fc0b033d09025fb0b85ffbf8a02365e.mp3str"
+
+[deps]
+
+source_file="res://Audio/Area Unlock.mp3"
+dest_files=["res://.godot/imported/Area Unlock.mp3-5fc0b033d09025fb0b85ffbf8a02365e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
