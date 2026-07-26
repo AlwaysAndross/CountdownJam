@@ -1,0 +1,60 @@
+[gd_scene format=4 uid="uid://d363qu0hohb2"]
+
+[ext_resource type="PackedScene" uid="uid://c8bhwwnd6v60v" path="res://Scenes/pachinko_nodes/pachinko_node_DEFAULT.tscn" id="1_810ch"]
+[ext_resource type="PackedScene" uid="uid://b2s2qd4tlxmn7" path="res://Scenes/gravity_zone.tscn" id="2_810ch"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aclmq"]
+size = Vector2(8, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_810ch"]
+size = Vector2(8, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_viqij"]
+size = Vector2(8, 32)
+
+[node name="pachinko_node_A4" unique_id=501276314 instance=ExtResource("1_810ch")]
+activate_position = Vector2i(576, 376)
+Pnode_ID = "A4"
+metadata/_edit_horizontal_guides_ = [512.0]
+
+[node name="NinePatchRect" parent="." index="0" unique_id=503802194]
+offset_right = 72.0
+offset_bottom = 136.0
+
+[node name="TileLayer" parent="." index="1" unique_id=1196776029]
+tile_map_data = PackedByteArray("AAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAABAAUAAAAAAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAABAAgAAAAAAAAAAAABAAkAAAAAAAAAAAABAAoAAAAAAAAAAAABAAsAAAAAAAAAAAABAAwAAAAAAAAAAAABAA0AAAAAAAAAAAABAA4AAAAAAAAAAAABAA8AAAAAAAAAAAACAA8AAAAAAAAAAAADAA8AAAAAAAAAAAAEAA8AAAAAAAAAAAAFAA8AAAAAAAAAAAAGAA8AAAAAAAAAAAAHAA8AAAAAAAAAAAAHAA4AAAAAAAAAAAAHAAoAAAAFAAAAAGAHAAkAAAAAAAAAAAAHAAgAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAcAAAAAAAAAAAAHAAcAAAAFAAAAAAACAAIAAAAGAAAAAFAGAA4AAAAAAAAAAAACAA4AAAAAAAAAAAAHAA0AAAAAAAAAAAAIAAoAAAAAAAAAAAAJAAoAAAAAAAAAAAAIAA0AAAAAAAAAAAAJAA0AAAAAAAAAAAAKAAoAAAAGAAAAAFAKAA0AAAAFAAAAAFAKAAcAAAAGAAAAAAACAAgAAAAGAAAAAAADAAkAAAAGAAAAAAAEAAoAAAAGAAAAAAAFAAsAAAAGAAAAAAAGAAwAAAAGAAAAAAAGAA0AAAAAAAAAAAAFAA0AAAAAAAAAAAAEAA0AAAAAAAAAAAAEAAwAAAAAAAAAAAADAAwAAAAAAAAAAAADAAsAAAAAAAAAAAACAAsAAAAAAAAAAAACAAoAAAAAAAAAAAACAAkAAAAAAAAAAAADAAoAAAAAAAAAAAAEAAsAAAAAAAAAAAAFAAwAAAAAAAAAAAADAA0AAAAAAAAAAAACAAwAAAAAAAAAAAACAA0AAAAAAAAAAAADAA4AAAAAAAAAAAAEAA4AAAAAAAAAAAAFAA4AAAAAAAAAAAAIAAIAAAAAAAAAAAAJAAIAAAAAAAAAAAAKAAIAAAAFAAAAADAHAAIAAAAGAAAAADA=")
+
+[node name="Gravity_Zone" parent="SpecialTiles" parent_id_path=PackedInt32Array(1531458723) index="0" unique_id=163085372 instance=ExtResource("2_810ch")]
+position = Vector2(64, 88)
+gravity_dir = 0
+
+[node name="CollisionShape2D" parent="SpecialTiles/Gravity_Zone" index="1" unique_id=111973379]
+position = Vector2(4, 8)
+shape = SubResource("RectangleShape2D_aclmq")
+
+[node name="Gravity_Zone2" parent="SpecialTiles" parent_id_path=PackedInt32Array(1531458723) index="1" unique_id=176822402 instance=ExtResource("2_810ch")]
+position = Vector2(80, 80)
+
+[node name="CollisionShape2D" parent="SpecialTiles/Gravity_Zone2" index="1" unique_id=111973379]
+position = Vector2(4, 20)
+shape = SubResource("RectangleShape2D_aclmq")
+
+[node name="Gravity_Zone4" parent="SpecialTiles" parent_id_path=PackedInt32Array(1531458723) index="2" unique_id=839659186 instance=ExtResource("2_810ch")]
+position = Vector2(80, 16)
+
+[node name="CollisionShape2D" parent="SpecialTiles/Gravity_Zone4" index="1" unique_id=111973379]
+position = Vector2(4, 24)
+shape = SubResource("RectangleShape2D_810ch")
+
+[node name="Gravity_Zone3" parent="SpecialTiles" parent_id_path=PackedInt32Array(1531458723) index="3" unique_id=1892993167 instance=ExtResource("2_810ch")]
+position = Vector2(64, 24)
+gravity_dir = 0
+
+[node name="CollisionShape2D" parent="SpecialTiles/Gravity_Zone3" index="1" unique_id=111973379]
+position = Vector2(4, 16)
+shape = SubResource("RectangleShape2D_viqij")
+
+[editable path="SpecialTiles/Gravity_Zone"]
+[editable path="SpecialTiles/Gravity_Zone2"]
+[editable path="SpecialTiles/Gravity_Zone4"]
+[editable path="SpecialTiles/Gravity_Zone3"]

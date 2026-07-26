@@ -46,6 +46,7 @@ Exit={
 [physics]
 
 3d/physics_engine="Jolt Physics"
+2d/solver/solver_iterations=32
 
 [rendering]
 

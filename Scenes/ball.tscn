@@ -13,6 +13,7 @@ radius = 4.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_yk4cr"]
 
 [node name="Ball" type="RigidBody2D" unique_id=560762546]
+z_index = 6
 disable_mode = 2
 collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_ij5cq")

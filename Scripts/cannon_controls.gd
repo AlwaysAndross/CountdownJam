@@ -8,6 +8,8 @@ var rotation_speed = 10
 @onready var ball_marker: Marker2D = $RoationGroup/BallMarker
 
 @export var ball : PackedScene
+@export var shot_delay : float = 0.8
+var shot_delay_time : float = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -23,8 +25,12 @@ func _process(delta: float) -> void:
 	if roation_group.rotation != target_angle:
 		var rotation_lerp_weight: float = 1.0 - exp(-rotation_speed * delta)
 		roation_group.rotation = lerp_angle(roation_group.rotation, target_angle, rotation_lerp_weight)
-	if Input.is_action_just_pressed("Shoot"):
-		make_ball(target_angle)
+	if Input.is_action_pressed("Shoot"):
+		if shot_delay_time <= 0:
+			shot_delay_time = shot_delay
+			make_ball(target_angle)
+	if shot_delay_time > 0:
+		shot_delay_time -= 1 * delta
 
 func make_ball(target_angle):
 	var shoot_angle = ball_marker.global_position - roation_group.global_position

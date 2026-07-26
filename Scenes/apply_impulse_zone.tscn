@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dtmq5v4vbw7ys"]
+
+[ext_resource type="Script" uid="uid://bowp22gouic8i" path="res://Scripts/apply_impulse_zone.gd" id="1_nn2c1"]
+[ext_resource type="Shader" uid="uid://b7glinmnle0gn" path="res://shaders/move_texture.gdshader" id="2_v2t1b"]
+[ext_resource type="Texture2D" uid="uid://b581ey3j78sd7" path="res://Sprites/checker.png" id="3_80sx3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n7sjq"]
+shader = ExtResource("2_v2t1b")
+shader_parameter/rotate_degree = 0.0
+shader_parameter/move_degree = 270.000004023324
+shader_parameter/speed = 0.50000002375
+shader_parameter/scale = 0.499999988824
+shader_parameter/gap = Vector2(0, 0)
+shader_parameter/node_scale = Vector2(0.5, 0.5)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_obfff"]
+blend_mode = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7s7g4"]
+size = Vector2(24, 8)
+
+[node name="ApplyImpulseZone" type="Area2D" unique_id=1678500299]
+z_index = 5
+script = ExtResource("1_nn2c1")
+impulse_force = Vector2(-30, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1701499693]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_n7sjq")
+texture = ExtResource("3_80sx3")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 8, 8)
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D" unique_id=367426735]
+clip_children = 2
+material = SubResource("CanvasItemMaterial_obfff")
+offset_right = 8.0
+offset_bottom = 8.0
+color = Color(0.04740674, 0.27047226, 0.21924296, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2113706411]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_7s7g4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

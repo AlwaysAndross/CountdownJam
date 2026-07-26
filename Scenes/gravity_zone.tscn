@@ -23,8 +23,8 @@ size = Vector2(8, 48)
 collision_layer = 2
 script = ExtResource("1_vj6rm")
 gravity_dir = 1
-up_color = Color(0, 0, 0.36862746, 1)
-down_color = Color(0.25288826, 2.97809e-07, 8.4228816e-08, 1)
+flipped_color = Color(0.4678653, 0.13911074, 0.1480768, 1)
+normal_color = Color(0.035613313, 0.1002057, 0.32470772, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1453159832]
 texture_filter = 1

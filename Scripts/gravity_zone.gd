@@ -1,9 +1,9 @@
 extends Area2D
 
-enum GravEnum {UP, DOWN}
+enum GravEnum {NORMAL, FLIPPED}
 @export var gravity_dir : GravEnum
-@export var up_color : Color
-@export var down_color : Color
+@export var flipped_color : Color
+@export var normal_color : Color
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var color_rect: ColorRect = $Sprite2D/ColorRect
@@ -13,12 +13,11 @@ func _ready() -> void:
 
 func change_gravity():
 	if gravity_dir == 0:
-		color_rect.color = up_color
+		color_rect.color = normal_color
 	if gravity_dir == 1:
-		color_rect.color = down_color
+		color_rect.color = flipped_color
 	var collision_shaperect : Rect2 = collision_shape_2d.shape.get_rect()
 	sprite_2d.region_rect = Rect2(0,0,collision_shaperect.size.x,collision_shaperect.size.y)
-	color_rect.color = up_color
 	color_rect.size = Vector2(collision_shaperect.size.x,collision_shaperect.size.y)
 
 func _on_body_entered(body: Node2D) -> void:

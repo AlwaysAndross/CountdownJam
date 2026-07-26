@@ -26,7 +26,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.has_signal("ball"):
 		body.destory()
 		if !is_infinite:
-			update_HP(1)
+			update_HP(body.damage)
 
 func update_HP(value):
 	current_HP -= value

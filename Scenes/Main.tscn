@@ -4,6 +4,18 @@
 [ext_resource type="PackedScene" uid="uid://4qw1xaahfcem" path="res://Scenes/pachinko_nodes/pachinko_node_A1.tscn" id="2_kln2b"]
 [ext_resource type="PackedScene" uid="uid://cdeh5s6pi3wrn" path="res://Scenes/pachinko_nodes/pachinko_node_A2.tscn" id="2_rgh2o"]
 [ext_resource type="PackedScene" uid="uid://16evpsm5pr4x" path="res://Scenes/pachinko_nodes/pachinko_node_A3.tscn" id="3_kln2b"]
+[ext_resource type="PackedScene" uid="uid://d363qu0hohb2" path="res://Scenes/pachinko_nodes/pachinko_node_A4.tscn" id="5_pbw6q"]
+[ext_resource type="PackedScene" uid="uid://gkdhogy3puum" path="res://Scenes/pachinko_nodes/pachinko_node_A5.tscn" id="6_v1gob"]
+[ext_resource type="PackedScene" uid="uid://j1uv4ekfx6ir" path="res://Scenes/pachinko_nodes/pachinko_node_A6.tscn" id="7_jw32o"]
+[ext_resource type="PackedScene" uid="uid://n7fdmcolntob" path="res://Scenes/pachinko_nodes/pachinko_node_A7.tscn" id="8_50glp"]
+[ext_resource type="PackedScene" uid="uid://qwbccfritbjl" path="res://Scenes/pachinko_nodes/pachinko_node_A8.tscn" id="9_vy5pj"]
+[ext_resource type="PackedScene" uid="uid://k2w7umdnbrfk" path="res://Scenes/pachinko_nodes/pachinko_node_A9.tscn" id="10_bmxlf"]
+[ext_resource type="PackedScene" uid="uid://b8yuh4vmmvk7j" path="res://Scenes/pachinko_nodes/pachinko_node_A10.tscn" id="11_4kpch"]
+[ext_resource type="PackedScene" uid="uid://djllo0m6ebqtj" path="res://Scenes/pachinko_nodes/pachinko_node_A11.tscn" id="12_grg3l"]
+[ext_resource type="PackedScene" uid="uid://b5dqhy8giub52" path="res://Scenes/pachinko_nodes/pachinko_node_B1.tscn" id="13_frkhe"]
+[ext_resource type="PackedScene" uid="uid://dxnnmxuwhtrnk" path="res://Scenes/pachinko_nodes/pachinko_node_B2.tscn" id="14_1p5hy"]
+[ext_resource type="PackedScene" uid="uid://dyloqrh3csv05" path="res://Scenes/pachinko_nodes/pachinko_node_B3.tscn" id="15_h1m7h"]
+[ext_resource type="AudioStream" uid="uid://c33vlu5xjdqaf" path="res://music/Countdown Jam Main Theme.mp3" id="16_erwvk"]
 
 [node name="Main" type="Node2D" unique_id=1292898817]
 script = ExtResource("1_rgh2o")
@@ -32,4 +44,46 @@ position = Vector2(800, 272)
 position = Vector2(648, 32)
 activate_position = Vector2i(648, 32)
 
+[node name="pachinko_node_A4" parent="PNodes" unique_id=2062727860 instance=ExtResource("5_pbw6q")]
+position = Vector2(576, 376)
+
+[node name="pachinko_node_A5" parent="PNodes" unique_id=1789123427 instance=ExtResource("6_v1gob")]
+position = Vector2(448, 32)
+activate_position = Vector2i(448, 32)
+
+[node name="pachinko_node_A6" parent="PNodes" unique_id=804337099 instance=ExtResource("7_jw32o")]
+position = Vector2(376, 376)
+
+[node name="pachinko_node_A7" parent="PNodes" unique_id=1875811464 instance=ExtResource("8_50glp")]
+position = Vector2(320, 32)
+
+[node name="pachinko_node_A8" parent="PNodes" unique_id=137001320 instance=ExtResource("9_vy5pj")]
+position = Vector2(160, 232)
+
+[node name="pachinko_node_A9" parent="PNodes" unique_id=194867029 instance=ExtResource("10_bmxlf")]
+position = Vector2(88, 376)
+
+[node name="pachinko_node_A10" parent="PNodes" unique_id=1613303027 instance=ExtResource("11_4kpch")]
+position = Vector2(88, 688)
+activate_position = Vector2i(88, 688)
+Pnode_ID = "A10"
+
+[node name="pachinko_node_A11" parent="PNodes" unique_id=765057771 instance=ExtResource("12_grg3l")]
+position = Vector2(856, 688)
+
+[node name="pachinko_node_B1" parent="PNodes" unique_id=666531222 instance=ExtResource("13_frkhe")]
+position = Vector2(800, 512)
+
+[node name="pachinko_node_B2" parent="PNodes" unique_id=2105751093 instance=ExtResource("14_1p5hy")]
+position = Vector2(1112, 352)
+
+[node name="pachinko_node_B3" parent="PNodes" unique_id=513563984 instance=ExtResource("15_h1m7h")]
+position = Vector2(576, 512)
+
 [node name="Balls" type="Node2D" parent="." unique_id=2062641376]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1301200855]
+stream = ExtResource("16_erwvk")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true

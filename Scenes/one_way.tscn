@@ -31,7 +31,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ee4pi")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pxc7n"]
-size = Vector2(24.000008, 8)
+size = Vector2(56, 8)
 
 [node name="OneWay" type="StaticBody2D" unique_id=1176832367]
 
