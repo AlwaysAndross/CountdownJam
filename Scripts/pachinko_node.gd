@@ -9,8 +9,8 @@ class_name PachinkoNode
 var initialized : bool = false
 
 func _ready() -> void:
+	set_deferred("visible", false)
 	if !default:
-		set_deferred("visible", false)
 		global_position = Vector2(-99999,-99999)
 
 #CHECK IF ITS BEEN CREATED AND MOVED

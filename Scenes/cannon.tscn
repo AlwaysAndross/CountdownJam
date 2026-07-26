@@ -7,7 +7,7 @@
 [node name="Cannon" type="Node2D" unique_id=1427740003]
 script = ExtResource("1_qlvt6")
 ball = ExtResource("2_3uv2y")
-shot_delay = 0.5
+shot_delay = 0.75
 
 [node name="CBase" type="Sprite2D" parent="." unique_id=252101205]
 texture_filter = 1

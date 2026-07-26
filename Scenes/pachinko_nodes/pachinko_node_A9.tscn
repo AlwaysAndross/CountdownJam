@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c8bhwwnd6v60v" path="res://Scenes/pachinko_nodes/pachinko_node_DEFAULT.tscn" id="1_7h00y"]
 [ext_resource type="PackedScene" uid="uid://mhh35w6pb8ph" path="res://Scenes/destroy_zone.tscn" id="2_ejns0"]
+[ext_resource type="PackedScene" uid="uid://cwj6h2don6q6l" path="res://Scenes/firerate_up.tscn" id="3_lhhat"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lhhat"]
 size = Vector2(32, 8)
@@ -45,6 +46,9 @@ area_start_hp = 10
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone3" index="1" unique_id=111973379]
 position = Vector2(16, 4)
 shape = SubResource("RectangleShape2D_lhhat")
+
+[node name="Firerate_Up" parent="SpecialTiles" parent_id_path=PackedInt32Array(1531458723) index="0" unique_id=42740339 instance=ExtResource("3_lhhat")]
+position = Vector2(46, 176)
 
 [editable path="DestoryZones/Destroy_zone"]
 [editable path="DestoryZones/Destroy_zone2"]

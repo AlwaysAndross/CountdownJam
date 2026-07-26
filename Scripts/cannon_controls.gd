@@ -11,6 +11,9 @@ var rotation_speed = 10
 @export var shot_delay : float = 0.8
 var shot_delay_time : float = 0
 
+func _ready() -> void:
+	Globaldata.increase_firerate.connect(increase_firerate)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
@@ -40,3 +43,6 @@ func make_ball(target_angle):
 	var parent : Node2D = get_tree().current_scene.find_child("Balls")
 	new_ball.shoot_ball(shoot_angle)
 	parent.add_child(new_ball)
+
+func increase_firerate(value):
+	shot_delay -= value

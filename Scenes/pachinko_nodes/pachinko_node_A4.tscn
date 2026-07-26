@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c8bhwwnd6v60v" path="res://Scenes/pachinko_nodes/pachinko_node_DEFAULT.tscn" id="1_810ch"]
 [ext_resource type="PackedScene" uid="uid://b2s2qd4tlxmn7" path="res://Scenes/gravity_zone.tscn" id="2_810ch"]
+[ext_resource type="PackedScene" uid="uid://cwj6h2don6q6l" path="res://Scenes/firerate_up.tscn" id="3_aclmq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aclmq"]
 size = Vector2(8, 24)
@@ -53,6 +54,12 @@ gravity_dir = 0
 [node name="CollisionShape2D" parent="SpecialTiles/Gravity_Zone3" index="1" unique_id=111973379]
 position = Vector2(4, 16)
 shape = SubResource("RectangleShape2D_viqij")
+
+[node name="Firerate_Up" parent="SpecialTiles" parent_id_path=PackedInt32Array(1531458723) index="4" unique_id=42740339 instance=ExtResource("3_aclmq")]
+position = Vector2(40, 64)
+
+[node name="Firerate_Up" parent="." index="4" unique_id=627101818 instance=ExtResource("3_aclmq")]
+position = Vector2(40, 43)
 
 [editable path="SpecialTiles/Gravity_Zone"]
 [editable path="SpecialTiles/Gravity_Zone2"]

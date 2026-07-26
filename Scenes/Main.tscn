@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://xe8osuy1i3w6"]
 
-[ext_resource type="Script" uid="uid://dmaf21dpsjeef" path="res://Scenes/main.gd" id="1_rgh2o"]
+[ext_resource type="Script" uid="uid://dmaf21dpsjeef" path="res://Scripts/main.gd" id="1_rgh2o"]
 [ext_resource type="PackedScene" uid="uid://4qw1xaahfcem" path="res://Scenes/pachinko_nodes/pachinko_node_A1.tscn" id="2_kln2b"]
 [ext_resource type="PackedScene" uid="uid://cdeh5s6pi3wrn" path="res://Scenes/pachinko_nodes/pachinko_node_A2.tscn" id="2_rgh2o"]
 [ext_resource type="PackedScene" uid="uid://16evpsm5pr4x" path="res://Scenes/pachinko_nodes/pachinko_node_A3.tscn" id="3_kln2b"]
@@ -15,7 +15,59 @@
 [ext_resource type="PackedScene" uid="uid://b5dqhy8giub52" path="res://Scenes/pachinko_nodes/pachinko_node_B1.tscn" id="13_frkhe"]
 [ext_resource type="PackedScene" uid="uid://dxnnmxuwhtrnk" path="res://Scenes/pachinko_nodes/pachinko_node_B2.tscn" id="14_1p5hy"]
 [ext_resource type="PackedScene" uid="uid://dyloqrh3csv05" path="res://Scenes/pachinko_nodes/pachinko_node_B3.tscn" id="15_h1m7h"]
+[ext_resource type="PackedScene" uid="uid://dvbtngocbx28" path="res://Scenes/pachinko_nodes/pachinko_node_END.tscn" id="16_2w5on"]
 [ext_resource type="AudioStream" uid="uid://c33vlu5xjdqaf" path="res://music/Countdown Jam Main Theme.mp3" id="16_erwvk"]
+[ext_resource type="AudioStream" uid="uid://b7ufhporsjgvo" path="res://Sounds2/boomerang.wav" id="18_346fj"]
+[ext_resource type="AudioStream" uid="uid://wrg57u738q6h" path="res://Sounds2/M2 Samus Space Jump.wav" id="19_0sclb"]
+[ext_resource type="FontFile" uid="uid://da53nf7er5aho" path="res://font/BoldPixels.ttf" id="20_sxkr1"]
+[ext_resource type="PackedScene" uid="uid://cc6mdc4omkmgf" path="res://Scenes/influence_sphere.tscn" id="21_fq0cl"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fq0cl"]
+font = ExtResource("20_sxkr1")
+font_size = 25
+font_color = Color(0.46, 0.0874, 0.0874, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sxkr1"]
+font = ExtResource("20_sxkr1")
+font_size = 25
+font_color = Color(0.22640193, 0.024534767, 0.024502782, 1)
+
+[sub_resource type="Animation" id="Animation_sxkr1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_fq0cl"]
+resource_name = "initial"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hwpts"]
+_data = {
+&"RESET": SubResource("Animation_sxkr1"),
+&"initial": SubResource("Animation_fq0cl")
+}
 
 [node name="Main" type="Node2D" unique_id=1292898817]
 script = ExtResource("1_rgh2o")
@@ -35,7 +87,7 @@ color = Color(0.014729318, 0.00022873002, 0.0019600198, 1)
 [node name="PNodes" type="Node2D" parent="." unique_id=233152571]
 
 [node name="pachinko_node_A1" parent="PNodes" unique_id=501276314 instance=ExtResource("2_kln2b")]
-position = Vector2(824, 8)
+position = Vector2(800, 8)
 
 [node name="pachinko_node_A2" parent="PNodes" unique_id=1162443320 instance=ExtResource("2_rgh2o")]
 position = Vector2(800, 272)
@@ -80,10 +132,62 @@ position = Vector2(1112, 352)
 [node name="pachinko_node_B3" parent="PNodes" unique_id=513563984 instance=ExtResource("15_h1m7h")]
 position = Vector2(576, 512)
 
+[node name="pachinko_node_END" parent="PNodes" unique_id=352268593 instance=ExtResource("16_2w5on")]
+position = Vector2(1232, 8)
+
 [node name="Balls" type="Node2D" parent="." unique_id=2062641376]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1301200855]
 stream = ExtResource("16_erwvk")
 volume_db = -10.0
-autoplay = true
 parameters/looping = true
+
+[node name="ZoneDestroyed" type="AudioStreamPlayer" parent="." unique_id=1661768102]
+stream = ExtResource("18_346fj")
+volume_db = -10.0
+pitch_scale = 1.1
+
+[node name="CollectedSPD" type="AudioStreamPlayer" parent="." unique_id=1631629095]
+stream = ExtResource("19_0sclb")
+volume_db = -15.0
+
+[node name="CollectedDMG" type="AudioStreamPlayer" parent="." unique_id=1673892851]
+stream = ExtResource("19_0sclb")
+volume_db = -15.0
+
+[node name="Label" type="Label" parent="." unique_id=1155884356]
+offset_left = 737.0
+offset_top = 506.0
+offset_right = 1142.0
+offset_bottom = 579.0
+text = "CLICK TO BEGIN"
+label_settings = SubResource("LabelSettings_fq0cl")
+
+[node name="DestoryLabel" type="Label" parent="." unique_id=2134691165]
+visible = false
+z_index = 4
+offset_left = 96.0
+offset_top = 896.0
+offset_right = 593.0
+offset_bottom = 969.0
+text = "DESTROYING BALLS..."
+label_settings = SubResource("LabelSettings_fq0cl")
+
+[node name="Info" type="Label" parent="." unique_id=714956065]
+visible = false
+z_index = 4
+offset_left = 1272.0
+offset_top = 88.0
+offset_right = 1769.0
+offset_bottom = 163.0
+text = "LEFT Click to shoot
+RIGHT Click to influence movement
+Hold space to cull balls"
+label_settings = SubResource("LabelSettings_sxkr1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=959671059]
+libraries/ = SubResource("AnimationLibrary_hwpts")
+autoplay = &"initial"
+
+[node name="influence_impulse" parent="." unique_id=759842219 instance=ExtResource("21_fq0cl")]
+position = Vector2(880, 88)

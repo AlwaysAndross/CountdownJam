@@ -3,12 +3,17 @@
 [ext_resource type="PackedScene" uid="uid://c8bhwwnd6v60v" path="res://Scenes/pachinko_nodes/pachinko_node_DEFAULT.tscn" id="1_u0wxd"]
 [ext_resource type="PackedScene" uid="uid://mhh35w6pb8ph" path="res://Scenes/destroy_zone.tscn" id="2_p1sec"]
 [ext_resource type="PackedScene" uid="uid://dtmq5v4vbw7ys" path="res://Scenes/apply_impulse_zone.tscn" id="3_p1sec"]
+[ext_resource type="PackedScene" uid="uid://bmidt78tmipem" path="res://Scenes/one_way.tscn" id="4_kadys"]
+[ext_resource type="PackedScene" uid="uid://ddja5lf5y1tyc" path="res://Scenes/damage_up.tscn" id="5_ad36d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kadys"]
 size = Vector2(8, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p1sec"]
 size = Vector2(296, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ad36d"]
+size = Vector2(24, 8)
 
 [node name="pachinko_node_B1" unique_id=501276314 instance=ExtResource("1_u0wxd")]
 activate_position = Vector2i(800, 512)
@@ -49,6 +54,21 @@ position = Vector2(0, 152)
 position = Vector2(148, 4)
 shape = SubResource("RectangleShape2D_p1sec")
 
+[node name="OneWay" parent="SpecialTiles" parent_id_path=PackedInt32Array(1531458723) index="1" unique_id=1176832367 instance=ExtResource("4_kadys")]
+position = Vector2(144, 56)
+
+[node name="TileMapLayer" parent="SpecialTiles/OneWay" index="0" unique_id=537609920]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAMAAAABAAAAAAAAAAMAAAACAAAAAAAAAAMAAAA=")
+
+[node name="CollisionShape2D" parent="SpecialTiles/OneWay" index="1" unique_id=374406024]
+position = Vector2(12, 4)
+rotation = -3.1415927
+shape = SubResource("RectangleShape2D_ad36d")
+
+[node name="Damage_Up" parent="SpecialTiles" parent_id_path=PackedInt32Array(1531458723) index="2" unique_id=42740339 instance=ExtResource("5_ad36d")]
+position = Vector2(156, 37)
+
 [editable path="DestoryZones/Destroy_zone"]
 [editable path="DestoryZones/Destroy_zone2"]
 [editable path="SpecialTiles/ApplyImpulseZone"]
+[editable path="SpecialTiles/OneWay"]

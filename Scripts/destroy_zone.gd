@@ -42,6 +42,7 @@ func initialize_HP():
 		area_hp_label.set_deferred("visible", false)
 
 func destory_zone():
+	get_tree().current_scene.destoryed_zone()
 	if destroy_blocks.size() > 0:
 		for layers in destroy_blocks:
 			layers.queue_free()

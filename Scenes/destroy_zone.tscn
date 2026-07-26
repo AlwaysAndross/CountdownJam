@@ -27,7 +27,7 @@ font_color = Color(0.9080532, 0.75950915, 0.8046337, 1)
 [node name="Destroy_zone" type="Area2D" unique_id=163085372]
 collision_layer = 0
 script = ExtResource("1_tybu2")
-grid_color = Color(0.5464291, 0, 0, 1)
+grid_color = Color(0.4245224, 0.1835114, 4.813075e-08, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1453159832]
 texture_filter = 1

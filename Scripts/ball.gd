@@ -44,11 +44,15 @@ func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
-	bounce_effect.play()
-	bounced = true
+	if !bounced:
+		var randpitch = randf_range(0.7,1.3)
+		bounce_effect.pitch_scale = randpitch
+		bounce_effect.play()
+		bounced = true
 
 
 func _on_area_2d_body_exited(_body: Node2D) -> void:
+	bounce_effect.stop()
 	bounced = false
 
 func change_gravity(value):

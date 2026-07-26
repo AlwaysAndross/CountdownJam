@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://dtmq5v4vbw7ys" path="res://Scenes/apply_impulse_zone.tscn" id="2_j8ptq"]
 [ext_resource type="PackedScene" uid="uid://bmidt78tmipem" path="res://Scenes/one_way.tscn" id="3_3lghr"]
 [ext_resource type="PackedScene" uid="uid://b2s2qd4tlxmn7" path="res://Scenes/gravity_zone.tscn" id="4_3lghr"]
+[ext_resource type="PackedScene" uid="uid://ddja5lf5y1tyc" path="res://Scenes/damage_up.tscn" id="6_sqqqd"]
+[ext_resource type="PackedScene" uid="uid://cwj6h2don6q6l" path="res://Scenes/firerate_up.tscn" id="7_277v0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lf2pp"]
 size = Vector2(8, 64)
@@ -141,6 +143,12 @@ gravity_dir = 0
 [node name="CollisionShape2D" parent="SpecialTiles/Gravity_Zone4" index="1" unique_id=111973379]
 position = Vector2(4, 24)
 shape = SubResource("RectangleShape2D_k3imb")
+
+[node name="Damage_Up" parent="SpecialTiles" parent_id_path=PackedInt32Array(1531458723) index="11" unique_id=42740339 instance=ExtResource("6_sqqqd")]
+position = Vector2(184, 152)
+
+[node name="Firerate_Up" parent="SpecialTiles" parent_id_path=PackedInt32Array(1531458723) index="12" unique_id=151483067 instance=ExtResource("7_277v0")]
+position = Vector2(176, 136)
 
 [editable path="DestoryZones/Destroy_zone"]
 [editable path="SpecialTiles/ApplyImpulseZone"]

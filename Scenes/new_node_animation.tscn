@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://b3dbqrbgasc0c" path="res://Scripts/new_node_animation.gd" id="1_ftmp7"]
 [ext_resource type="Texture2D" uid="uid://c6drjulnngw02" path="res://Sprites/border.png" id="2_dqfg3"]
 [ext_resource type="Shader" uid="uid://jofk8t85slvf" path="res://shaders/flash.gdshader" id="2_yijcs"]
+[ext_resource type="AudioStream" uid="uid://bjpl1kyriwryl" path="res://Sounds2/transform.wav" id="4_yijcs"]
+[ext_resource type="AudioStream" uid="uid://wt7r7alcuhjf" path="res://Sounds2/roadrunner.wav" id="5_bdktx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bdktx"]
 shader = ExtResource("2_yijcs")
@@ -50,7 +52,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_yijcs"]
 resource_name = "finish_pnode"
-length = 0.3
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -112,7 +114,7 @@ _data = {
 }
 
 [node name="New_Node_Animation" type="Node2D" unique_id=1402683044]
-z_index = 6
+z_index = 9
 script = ExtResource("1_ftmp7")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=47873669]
@@ -129,3 +131,11 @@ patch_margin_bottom = 8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=19967200]
 libraries/ = SubResource("AnimationLibrary_bdktx")
+
+[node name="NewZoneSound" type="AudioStreamPlayer" parent="." unique_id=1661215980]
+stream = ExtResource("4_yijcs")
+volume_db = -10.0
+
+[node name="NewZoneSound2" type="AudioStreamPlayer" parent="." unique_id=983126199]
+stream = ExtResource("5_bdktx")
+volume_db = -10.0

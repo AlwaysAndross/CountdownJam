@@ -4,7 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://mhh35w6pb8ph" path="res://Scenes/destroy_zone.tscn" id="2_h8806"]
 [ext_resource type="PackedScene" uid="uid://bmidt78tmipem" path="res://Scenes/one_way.tscn" id="2_kdj3b"]
 [ext_resource type="PackedScene" uid="uid://bkw7vvsb8cdbl" path="res://Scenes/destustable_blocks.tscn" id="3_5bc42"]
-[ext_resource type="PackedScene" uid="uid://ddja5lf5y1tyc" path="res://Scenes/damage_up.tscn" id="5_l87bp"]
+[ext_resource type="PackedScene" uid="uid://cwj6h2don6q6l" path="res://Scenes/firerate_up.tscn" id="5_l87bp"]
+[ext_resource type="PackedScene" uid="uid://dtmq5v4vbw7ys" path="res://Scenes/apply_impulse_zone.tscn" id="6_2h7am"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h8806"]
 size = Vector2(24, 16)
@@ -33,6 +34,9 @@ size = Vector2(8, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipqvp"]
 size = Vector2(8, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vuive"]
+size = Vector2(8, 32)
+
 [node name="pachinko_node_A2" unique_id=501276314 instance=ExtResource("1_1tngc")]
 activate_position = Vector2i(800, 272)
 Pnode_ID = "A2"
@@ -46,7 +50,7 @@ tile_map_data = PackedByteArray("AAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAABAAIAAAAAAAA
 
 [node name="Destroy_zone" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="0" unique_id=163085372 instance=ExtResource("2_h8806")]
 position = Vector2(144, 40)
-area_start_hp = 20
+area_start_hp = 15
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone" index="1" unique_id=111973379]
 position = Vector2(12, 8)
@@ -56,7 +60,7 @@ shape = SubResource("RectangleShape2D_h8806")
 position = Vector2(56, 208)
 new_zone = "B1"
 has_new_zone = true
-area_start_hp = 20
+area_start_hp = 15
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone2" index="1" unique_id=111973379]
 position = Vector2(16, 8)
@@ -66,7 +70,7 @@ shape = SubResource("RectangleShape2D_gtujo")
 position = Vector2(120, 208)
 new_zone = "B1"
 has_new_zone = true
-area_start_hp = 20
+area_start_hp = 15
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone3" index="1" unique_id=111973379]
 position = Vector2(8, 8)
@@ -76,7 +80,7 @@ shape = SubResource("RectangleShape2D_5bc42")
 position = Vector2(176, 208)
 new_zone = "B1"
 has_new_zone = true
-area_start_hp = 20
+area_start_hp = 15
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone4" index="1" unique_id=111973379]
 position = Vector2(8, 8)
@@ -86,7 +90,7 @@ shape = SubResource("RectangleShape2D_5bc42")
 position = Vector2(224, 208)
 new_zone = "B1"
 has_new_zone = true
-area_start_hp = 20
+area_start_hp = 15
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone5" index="1" unique_id=111973379]
 position = Vector2(16, 8)
@@ -96,7 +100,7 @@ shape = SubResource("RectangleShape2D_vjt6d")
 position = Vector2(152, 208)
 new_zone = "B1"
 has_new_zone = true
-area_start_hp = 20
+area_start_hp = 15
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone6" index="1" unique_id=111973379]
 position = Vector2(4, 8)
@@ -106,7 +110,7 @@ shape = SubResource("RectangleShape2D_l87bp")
 position = Vector2(16, 120)
 new_zone = "A3"
 has_new_zone = true
-area_start_hp = 1
+area_start_hp = 15
 destroy_blocks = [NodePath("DestustableBlocks")]
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone7" index="1" unique_id=111973379]
@@ -121,7 +125,7 @@ tile_map_data = PackedByteArray("AAABABwAAAAAAAAAAAABAB0AAAAAAAAAAAABAB4AAAAAAAA
 position = Vector2(288, 120)
 new_zone = "B2"
 has_new_zone = true
-area_start_hp = 20
+area_start_hp = 15
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone8" index="1" unique_id=111973379]
 position = Vector2(4, 24)
@@ -130,7 +134,7 @@ shape = SubResource("RectangleShape2D_h26so")
 [node name="Destroy_zone9" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="8" unique_id=1063319293 instance=ExtResource("2_h8806")]
 position = Vector2(40, 208)
 is_infinite = true
-area_start_hp = 20
+area_start_hp = 15
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone9" index="1" unique_id=111973379]
 position = Vector2(4, 8)
@@ -139,7 +143,7 @@ shape = SubResource("RectangleShape2D_epxfk")
 [node name="Destroy_zone10" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="9" unique_id=1413261629 instance=ExtResource("2_h8806")]
 position = Vector2(264, 208)
 is_infinite = true
-area_start_hp = 20
+area_start_hp = 15
 
 [node name="CollisionShape2D" parent="DestoryZones/Destroy_zone10" index="1" unique_id=111973379]
 position = Vector2(4, 8)
@@ -155,8 +159,16 @@ tile_map_data = PackedByteArray("AAAUAAcAAAAAAAMAAAATAAcAAAAAAAMAAAASAAcAAAAAAAM
 position = Vector2(156, 60)
 rotation = -3.1415925
 
-[node name="Damage_Up" parent="." index="4" unique_id=42740339 instance=ExtResource("5_l87bp")]
-position = Vector2(156, 16)
+[node name="Firerate_Up" parent="SpecialTiles" parent_id_path=PackedInt32Array(1531458723) index="1" unique_id=42740339 instance=ExtResource("5_l87bp")]
+position = Vector2(156, 26)
+
+[node name="ApplyImpulseZone" parent="SpecialTiles" parent_id_path=PackedInt32Array(1531458723) index="2" unique_id=1678500299 instance=ExtResource("6_2h7am")]
+position = Vector2(152, 176)
+impulse_force = Vector2(0, 90)
+
+[node name="CollisionShape2D" parent="SpecialTiles/ApplyImpulseZone" index="1" unique_id=2113706411]
+position = Vector2(4, 16)
+shape = SubResource("RectangleShape2D_vuive")
 
 [editable path="DestoryZones/Destroy_zone"]
 [editable path="DestoryZones/Destroy_zone2"]
@@ -169,3 +181,4 @@ position = Vector2(156, 16)
 [editable path="DestoryZones/Destroy_zone9"]
 [editable path="DestoryZones/Destroy_zone10"]
 [editable path="SpecialTiles/OneWay"]
+[editable path="SpecialTiles/ApplyImpulseZone"]

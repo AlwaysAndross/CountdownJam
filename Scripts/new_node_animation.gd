@@ -1,6 +1,8 @@
 extends Node2D
 class_name NewNodeAnim
 
+@onready var new_zone_sound_2: AudioStreamPlayer = $NewZoneSound2
+@onready var new_zone_sound: AudioStreamPlayer = $NewZoneSound
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var nine_patch_rect: NinePatchRect = $NinePatchRect
 var new_size : Vector2
@@ -9,6 +11,7 @@ var play = false
 var new_pnode 
 
 func _ready() -> void:
+	new_zone_sound.play()
 	nine_patch_rect.size = Vector2(10,13)
 
 func expand_block(value):
@@ -26,6 +29,7 @@ func _process(delta: float) -> void:
 				animation_player.play("finish_pnode")
 
 func make_visible():
+	new_zone_sound_2.play()
 	new_pnode.move_node()
 
 func destoryself():

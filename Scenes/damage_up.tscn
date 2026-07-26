@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://ddja5lf5y1tyc"]
 
-[ext_resource type="Script" uid="uid://jwqi7awga21j" path="res://Scenes/damage_up.gd" id="1_01yaf"]
+[ext_resource type="Script" uid="uid://jwqi7awga21j" path="res://Scripts/damage_up.gd" id="1_01yaf"]
 [ext_resource type="FontFile" uid="uid://da53nf7er5aho" path="res://font/BoldPixels.ttf" id="1_n6mxu"]
+[ext_resource type="PackedScene" uid="uid://dqyl75ht8he2u" path="res://Scenes/collected_anim_dmg.tscn" id="2_k6ote"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dtvil"]
 
 [node name="Damage_Up" type="Area2D" unique_id=42740339]
 script = ExtResource("1_01yaf")
+text_anim = ExtResource("2_k6ote")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1563931915]
 shape = SubResource("RectangleShape2D_dtvil")
