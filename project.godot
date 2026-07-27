@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Countdown"
+config/name="PACHINKED"
 run/main_scene="uid://xe8osuy1i3w6"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"

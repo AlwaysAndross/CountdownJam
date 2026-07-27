@@ -100,7 +100,7 @@ activate_position = Vector2i(648, 32)
 position = Vector2(576, 376)
 
 [node name="pachinko_node_A5" parent="PNodes" unique_id=1789123427 instance=ExtResource("6_v1gob")]
-position = Vector2(448, 32)
+position = Vector2(432, 32)
 activate_position = Vector2i(448, 32)
 
 [node name="pachinko_node_A6" parent="PNodes" unique_id=804337099 instance=ExtResource("7_jw32o")]
