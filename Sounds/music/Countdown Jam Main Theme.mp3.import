@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c33vlu5xjdqaf"
+path="res://.godot/imported/Countdown Jam Main Theme.mp3-ea21273f4653c48431b097d762e750d9.mp3str"
+
+[deps]
+
+source_file="res://Sounds/music/Countdown Jam Main Theme.mp3"
+dest_files=["res://.godot/imported/Countdown Jam Main Theme.mp3-ea21273f4653c48431b097d762e750d9.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

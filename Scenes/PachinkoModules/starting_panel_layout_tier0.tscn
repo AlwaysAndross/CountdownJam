@@ -1,0 +1,64 @@
+[gd_scene format=4 uid="uid://bjupx1b2j7h1s"]
+
+[ext_resource type="PackedScene" uid="uid://nbxje80qw55" path="res://Scenes/PachinkoModules/pachinko_node_DEFAULT.tscn" id="1_13pa2"]
+[ext_resource type="PackedScene" uid="uid://rbovucp7bkb7" path="res://Scenes/SpecialZones/destroy_zone.tscn" id="2_2o5bp"]
+[ext_resource type="PackedScene" uid="uid://cl0x07ky038p4" path="res://Scenes/PanelComponents/score_cup.tscn" id="3_q2j2u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4n1nj"]
+size = Vector2(16, 32)
+
+[node name="pachinko_node" unique_id=501276314 instance=ExtResource("1_13pa2")]
+
+[node name="NinePatchRect" parent="." index="0" unique_id=503802194]
+offset_right = 208.0
+offset_bottom = 288.0
+
+[node name="Destroy_zone" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="0" unique_id=163085372 instance=ExtResource("2_2o5bp")]
+position = Vector2(32, 224)
+is_infinite = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DestoryZones/Destroy_zone" index="2" unique_id=1905751072]
+position = Vector2(8, 16)
+shape = SubResource("RectangleShape2D_4n1nj")
+
+[node name="Destroy_zone2" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="1" unique_id=631665164 instance=ExtResource("2_2o5bp")]
+position = Vector2(64, 224)
+is_infinite = true
+score_value = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DestoryZones/Destroy_zone2" index="2" unique_id=73147103]
+position = Vector2(8, 16)
+shape = SubResource("RectangleShape2D_4n1nj")
+
+[node name="Destroy_zone3" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="2" unique_id=115230208 instance=ExtResource("2_2o5bp")]
+position = Vector2(96, 224)
+is_infinite = true
+score_value = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DestoryZones/Destroy_zone3" index="2" unique_id=808992400]
+position = Vector2(8, 16)
+shape = SubResource("RectangleShape2D_4n1nj")
+
+[node name="Destroy_zone4" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="3" unique_id=858435106 instance=ExtResource("2_2o5bp")]
+position = Vector2(128, 224)
+is_infinite = true
+score_value = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DestoryZones/Destroy_zone4" index="2" unique_id=713923784]
+position = Vector2(8, 16)
+shape = SubResource("RectangleShape2D_4n1nj")
+
+[node name="Destroy_zone5" parent="DestoryZones" parent_id_path=PackedInt32Array(2107329434) index="4" unique_id=786061353 instance=ExtResource("2_2o5bp")]
+position = Vector2(160, 224)
+is_infinite = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DestoryZones/Destroy_zone5" index="2" unique_id=1157760167]
+position = Vector2(8, 16)
+shape = SubResource("RectangleShape2D_4n1nj")
+
+[node name="Score_cup" parent="SpecialTiles" parent_id_path=PackedInt32Array(1531458723) index="0" unique_id=1835584760 instance=ExtResource("3_q2j2u")]
+position = Vector2(104, 160)
+score_amount = 1
+
+[node name="TileMapLayer" parent="." index="3" unique_id=1955360470]
+tile_map_data = PackedByteArray("AAABAAEAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAABAAUAAAAAAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAABAAgAAAAAAAAAAAABAAkAAAAAAAAAAAABAAoAAAAAAAAAAAABAAsAAAAAAAAAAAABAAwAAAAAAAAAAAABAA0AAAAAAAAAAAABAA4AAAAAAAAAAAABAA8AAAAAAAAAAAABABAAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAALAAEAAAAAAAAAAAACABAAAAAAAAAAAAADABAAAAAAAAAAAAAEABAAAAAAAAAAAAAFABAAAAAAAAAAAAAGABAAAAAAAAAAAAAHABAAAAAAAAAAAAAIABAAAAAAAAAAAAAJABAAAAAAAAAAAAAKABAAAAAAAAAAAAALABAAAAAAAAAAAAALAAIAAAAAAAAAAAALAAMAAAAAAAAAAAALAAQAAAAAAAAAAAALAAUAAAAAAAAAAAALAAYAAAAAAAAAAAALAAcAAAAAAAAAAAALAAgAAAAAAAAAAAALAAkAAAAAAAAAAAALAAoAAAAAAAAAAAALAAsAAAAAAAAAAAALAAwAAAAAAAAAAAALAA0AAAAAAAAAAAALAA4AAAAAAAAAAAALAA8AAAAAAAAAAAACAAgAAAACAAAAAAACAAkAAAACAAEAAAAKAAgAAAABAAAAAAAKAAkAAAABAAEAAAAGAAYAAAAEAAEAAAAFAAcAAAAEAAEAAAAHAAcAAAAEAAEAAAAEAAkAAAAFAAEAAAAIAAkAAAAFAAEAAAAFAA4AAAAAAAAAAAAFAA8AAAAAAAAAAAAHAA4AAAAAAAAAAAAHAA8AAAAAAAAAAAAFAAwAAAADAAEAAAAFAA0AAAAAAAAAAAAHAA0AAAAAAAAAAAADAA4AAAAAAAAAAAADAA8AAAAAAAAAAAAJAA4AAAAAAAAAAAAJAA8AAAAAAAAAAAADAA0AAAADAAEAAAAJAA0AAAADAAEAAAAHAAwAAAADAAEAAAA=")

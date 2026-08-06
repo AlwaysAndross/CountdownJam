@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://cl0x07ky038p4"]
+
+[ext_resource type="Script" uid="uid://d3tldfw3m1m30" path="res://Scripts/PanelComponents/score_cup.gd" id="1_6suot"]
+[ext_resource type="Texture2D" uid="uid://7il8yecp38nt" path="res://Sprites/score_cups.png" id="1_dxjtc"]
+[ext_resource type="FontFile" uid="uid://da53nf7er5aho" path="res://Fonts/BoldPixels.ttf" id="2_sn4qa"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w3lyf"]
+radius = 2.0
+height = 12.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dxjtc"]
+radius = 3.0
+height = 26.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_4n1nj"]
+font = ExtResource("2_sn4qa")
+font_size = 24
+font_color = Color(0.81221676, 0.54168415, 0.26765147, 1)
+outline_size = 4
+outline_color = Color(0.106870286, 0.010050447, 0.008067685, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4n1nj"]
+radius = 1.0
+
+[node name="Score_cup" type="StaticBody2D" unique_id=1835584760]
+script = ExtResource("1_6suot")
+
+[node name="CupBG" type="Sprite2D" parent="." unique_id=2024883125]
+texture_filter = 1
+position = Vector2(0, 2)
+texture = ExtResource("1_dxjtc")
+region_enabled = true
+region_rect = Rect2(48, 0, 32, 32)
+
+[node name="Cup" type="Sprite2D" parent="." unique_id=1953590998]
+z_index = 7
+texture_filter = 1
+position = Vector2(0, 7)
+texture = ExtResource("1_dxjtc")
+region_enabled = true
+region_rect = Rect2(0, 0, 48, 32)
+
+[node name="CupBG2" type="Sprite2D" parent="." unique_id=1585081723]
+texture_filter = 1
+position = Vector2(0, 2)
+texture = ExtResource("1_dxjtc")
+region_enabled = true
+region_rect = Rect2(48, 0, 32, 32)
+
+[node name="Cup2" type="Sprite2D" parent="." unique_id=139406704]
+z_index = 7
+texture_filter = 1
+position = Vector2(0, 7)
+texture = ExtResource("1_dxjtc")
+region_enabled = true
+region_rect = Rect2(0, 0, 48, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=30188595]
+position = Vector2(-13, 6)
+shape = SubResource("CapsuleShape2D_w3lyf")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1132920660]
+position = Vector2(13, 6)
+shape = SubResource("CapsuleShape2D_w3lyf")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=959566663]
+position = Vector2(0, 14)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_dxjtc")
+
+[node name="Counter" type="Label" parent="." unique_id=540437496]
+visible = false
+z_index = 7
+texture_filter = 1
+offset_left = -22.0
+offset_top = 8.0
+offset_right = 24.0
+offset_bottom = 30.0
+text = "10"
+label_settings = SubResource("LabelSettings_4n1nj")
+horizontal_alignment = 1
+
+[node name="Collect_area" type="Area2D" parent="." unique_id=479782065]
+position = Vector2(0, 6)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collect_area" unique_id=1691896051]
+shape = SubResource("CircleShape2D_4n1nj")
+
+[connection signal="body_entered" from="Collect_area" to="." method="_on_collect_area_body_entered"]

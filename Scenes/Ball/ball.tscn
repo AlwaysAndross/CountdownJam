@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://by4bb68hbw0c0"]
+
+[ext_resource type="Script" uid="uid://bbwxyw6kogr5l" path="res://Scripts/Ball/ball.gd" id="1_qrf04"]
+[ext_resource type="PackedScene" uid="uid://bko3gw82t0jff" path="res://Scenes/AnimationsEffects/pop_ball_effect.tscn" id="2_uw8co"]
+[ext_resource type="Texture2D" uid="uid://bw3mamxwqsde7" path="res://Sprites/pachinkgo_spritesheet.png" id="3_qrf04"]
+[ext_resource type="AudioStream" uid="uid://dmnvt3iitikvw" path="res://Sounds/uiclick2.wav" id="4_qrf04"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ij5cq"]
+friction = 0.29
+bounce = 0.8
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d60mj"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yk4cr"]
+radius = 7.0
+
+[node name="Ball" type="RigidBody2D" unique_id=560762546]
+z_index = 6
+disable_mode = 2
+collision_mask = 7
+physics_material_override = SubResource("PhysicsMaterial_ij5cq")
+constant_torque = 0.1
+script = ExtResource("1_qrf04")
+max_speed = 800.0
+pop_effect = ExtResource("2_uw8co")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=290440750]
+texture_filter = 1
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_qrf04")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=523681788]
+shape = SubResource("CircleShape2D_d60mj")
+
+[node name="Bounce_Effect" type="AudioStreamPlayer" parent="." unique_id=41974532]
+stream = ExtResource("4_qrf04")
+volume_db = -40.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1889840968]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1186684699]
+shape = SubResource("CircleShape2D_yk4cr")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

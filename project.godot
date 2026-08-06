@@ -11,9 +11,9 @@ config_version=5
 [application]
 
 config/name="PACHINKED"
-run/main_scene="uid://xe8osuy1i3w6"
-config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+run/main_scene="uid://hmom1ulbxp0"
+config/features=PackedStringArray("4.7", "Forward Plus")
+config/icon="uid://bccjbif8qtqfy"
 
 [autoload]
 
@@ -24,12 +24,14 @@ Globaldata="*uid://jmo7opw7rnc4"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=2
+mouse_cursor/custom_image="uid://dvcab0xmb40xy"
 
 [input]
 
 Shoot={
 "deadzone": 0.2,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
 ]
 }
 Exit={
@@ -47,6 +49,16 @@ influence={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":2,"canceled":false,"pressed":false,"double_click":false,"script":null)
 ]
 }
+ZoomIn={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":4,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
+ZoomOut={
+"deadzone": 0.2,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":5,"canceled":false,"pressed":false,"double_click":false,"script":null)
+]
+}
 
 [layer_names]
 
@@ -57,7 +69,6 @@ influence={
 [physics]
 
 3d/physics_engine="Jolt Physics"
-2d/solver/solver_iterations=32
 
 [rendering]
 

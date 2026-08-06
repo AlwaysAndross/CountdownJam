@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq07f7omjioua"
-path="res://.godot/imported/itch_thumb.png-86ca10c0ceec4f83d8bdb9ace3a5dc4d.ctex"
+uid="uid://b3304b2vdbjrj"
+path="res://.godot/imported/Block.png-ae93111a74eeb2172909aefe2d5f12df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/itch_thumb.png"
-dest_files=["res://.godot/imported/itch_thumb.png-86ca10c0ceec4f83d8bdb9ace3a5dc4d.ctex"]
+source_file="res://Sprites/blocks/Block.png"
+dest_files=["res://.godot/imported/Block.png-ae93111a74eeb2172909aefe2d5f12df.ctex"]
 
 [params]
 

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://gu1xragqs8lu"]
+
+[ext_resource type="Texture2D" uid="uid://b3304b2vdbjrj" path="res://Sprites/blocks/Block.png" id="1_8wypp"]
+
+[node name="Node2D" type="Node2D" unique_id=1765740104]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=404312374]
+texture_filter = 1
+rotation = 1.5707964
+texture = ExtResource("1_8wypp")
+region_enabled = true
+region_rect = Rect2(48, 32, 8, 24)

@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cc6mdc4omkmgf"]
+
+[ext_resource type="Script" uid="uid://pfdt2iairqfq" path="res://Scripts/Archive/influence_sphere.gd" id="1_3at71"]
+[ext_resource type="Texture2D" uid="uid://brkwiayyageuk" path="res://Sprites/SHPERE.png" id="1_r4uw1"]
+[ext_resource type="PackedScene" uid="uid://dtmq5v4vbw7ys" path="res://Scenes/SpecialZones/apply_impulse_zone.tscn" id="2_3at71"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxbtn"]
+size = Vector2(35, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8vt3"]
+size = Vector2(62, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tms6g"]
+size = Vector2(62, 18)
+
+[node name="influence_impulse" type="Node2D" unique_id=217059546]
+script = ExtResource("1_3at71")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2052490863]
+modulate = Color(1, 1, 1, 0.4)
+texture_filter = 1
+position = Vector2(0.4999981, 0.4999981)
+scale = Vector2(1.140625, 1.140625)
+texture = ExtResource("1_r4uw1")
+
+[node name="ApplyImpulseZone" parent="." unique_id=1678500299 instance=ExtResource("2_3at71")]
+position = Vector2(-35, -15)
+
+[node name="Sprite2D" parent="ApplyImpulseZone" index="0" unique_id=1701499693]
+visible = false
+
+[node name="CollisionShape2D" parent="ApplyImpulseZone" index="1" unique_id=2113706411]
+position = Vector2(17.5, 15)
+shape = SubResource("RectangleShape2D_yxbtn")
+
+[node name="ApplyImpulseZone2" parent="." unique_id=1109241 instance=ExtResource("2_3at71")]
+position = Vector2(-29, -33)
+impulse_force = Vector2(0, -30)
+
+[node name="Sprite2D" parent="ApplyImpulseZone2" index="0" unique_id=1701499693]
+visible = false
+
+[node name="CollisionShape2D" parent="ApplyImpulseZone2" index="1" unique_id=2113706411]
+position = Vector2(31, 9)
+shape = SubResource("RectangleShape2D_o8vt3")
+
+[node name="ApplyImpulseZone3" parent="." unique_id=2114043912 instance=ExtResource("2_3at71")]
+position = Vector2(0, -15)
+impulse_force = Vector2(30, 0)
+
+[node name="Sprite2D" parent="ApplyImpulseZone3" index="0" unique_id=1701499693]
+visible = false
+
+[node name="CollisionShape2D" parent="ApplyImpulseZone3" index="1" unique_id=2113706411]
+position = Vector2(17.5, 15)
+shape = SubResource("RectangleShape2D_yxbtn")
+
+[node name="ApplyImpulseZone4" parent="." unique_id=1796025836 instance=ExtResource("2_3at71")]
+position = Vector2(-30, 15)
+impulse_force = Vector2(0, 30)
+
+[node name="Sprite2D" parent="ApplyImpulseZone4" index="0" unique_id=1701499693]
+visible = false
+
+[node name="CollisionShape2D" parent="ApplyImpulseZone4" index="1" unique_id=2113706411]
+position = Vector2(31, 9)
+shape = SubResource("RectangleShape2D_tms6g")
+
+[editable path="ApplyImpulseZone"]
+[editable path="ApplyImpulseZone2"]
+[editable path="ApplyImpulseZone3"]
+[editable path="ApplyImpulseZone4"]

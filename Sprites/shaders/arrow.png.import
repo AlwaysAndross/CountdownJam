@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq07f7omjioua"
-path="res://.godot/imported/itch_thumb.png-86ca10c0ceec4f83d8bdb9ace3a5dc4d.ctex"
+uid="uid://b5js2ui3rbrnh"
+path="res://.godot/imported/arrow.png-c2fe71d5d3742989d0b7b783424a1c71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/itch_thumb.png"
-dest_files=["res://.godot/imported/itch_thumb.png-86ca10c0ceec4f83d8bdb9ace3a5dc4d.ctex"]
+source_file="res://Sprites/shaders/arrow.png"
+dest_files=["res://.godot/imported/arrow.png-c2fe71d5d3742989d0b7b783424a1c71.ctex"]
 
 [params]
 

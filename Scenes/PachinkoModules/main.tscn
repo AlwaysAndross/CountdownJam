@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://hmom1ulbxp0"]
+
+[ext_resource type="Script" uid="uid://bd56euq4w0xxb" path="res://Scripts/GameSystem.gd" id="1_2fp16"]
+[ext_resource type="Script" uid="uid://c5gtirghmclg6" path="res://Scripts/Camera/game_cam.gd" id="1_ldgf8"]
+[ext_resource type="PackedScene" uid="uid://4jb43jt7j1wt" path="res://Scenes/PanelComponents/cannon.tscn" id="2_l5qn1"]
+[ext_resource type="PackedScene" uid="uid://wht1xqaesdux" path="res://Scenes/UI/canvas_ui.tscn" id="5_0hlkf"]
+[ext_resource type="PackedScene" uid="uid://bjupx1b2j7h1s" path="res://Scenes/PachinkoModules/starting_panel_layout_tier0.tscn" id="5_oht6j"]
+
+[node name="Main" type="Node2D" unique_id=1901996473]
+script = ExtResource("1_2fp16")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=708255003]
+position = Vector2(256, 256)
+script = ExtResource("1_ldgf8")
+
+[node name="Node" type="Node" parent="." unique_id=1465150226]
+
+[node name="Cannon" parent="." unique_id=1427740003 instance=ExtResource("2_l5qn1")]
+z_index = 8
+position = Vector2(248, 48)
+
+[node name="CanvasUI" parent="." unique_id=1856052065 instance=ExtResource("5_0hlkf")]
+layer = 0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1904615917]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=594143234]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="pachinko_node" parent="." unique_id=501276314 instance=ExtResource("5_oht6j")]
+position = Vector2(144, 0)

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://wht1xqaesdux"]
+
+[ext_resource type="Script" uid="uid://c63d8qkxddg1p" path="res://Scripts/UI/canvas_ui.gd" id="1_2qsjq"]
+[ext_resource type="FontFile" uid="uid://da53nf7er5aho" path="res://Fonts/BoldPixels.ttf" id="1_a8oly"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_4n1nj"]
+font = ExtResource("1_a8oly")
+font_size = 83
+
+[node name="CanvasUI" type="CanvasLayer" unique_id=1856052065]
+script = ExtResource("1_2qsjq")
+
+[node name="BallCount" type="Control" parent="." unique_id=2095275427]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BallCount_Label" type="Label" parent="BallCount" unique_id=432319749]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -960.0
+offset_right = 960.0
+offset_bottom = 74.0
+grow_horizontal = 2
+text = "0"
+label_settings = SubResource("LabelSettings_4n1nj")
+horizontal_alignment = 1

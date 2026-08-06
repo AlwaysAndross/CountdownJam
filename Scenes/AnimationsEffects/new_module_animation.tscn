@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://cafli354g20y0"]
+
+[ext_resource type="Script" uid="uid://b3dbqrbgasc0c" path="res://Scripts/AnimationsEffects/new_node_animation.gd" id="1_qnc1b"]
+[ext_resource type="Shader" uid="uid://jofk8t85slvf" path="res://shaders/flash.gdshader" id="2_qnc1b"]
+[ext_resource type="Texture2D" uid="uid://h4i858xoebku" path="res://Sprites/borders/border.png" id="3_k100d"]
+[ext_resource type="AudioStream" uid="uid://bjpl1kyriwryl" path="res://Sounds/transform.wav" id="4_al050"]
+[ext_resource type="AudioStream" uid="uid://wt7r7alcuhjf" path="res://Sounds/roadrunner.wav" id="5_jo333"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ytrq"]
+shader = ExtResource("2_qnc1b")
+shader_parameter/flash_color = Color(1, 1, 1, 1)
+shader_parameter/flash_value = 0.0
+
+[sub_resource type="Animation" id="Animation_dqfg3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("NinePatchRect:material:shader_parameter/flash_value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NinePatchRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NinePatchRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yijcs"]
+resource_name = "finish_pnode"
+length = 0.4
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"make_visible"
+}, {
+"args": [],
+"method": &"destoryself"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("NinePatchRect:material:shader_parameter/flash_value")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("NinePatchRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.16666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 10), Vector2(0, -9.875), Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NinePatchRect:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.06666667, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bdktx"]
+_data = {
+&"RESET": SubResource("Animation_dqfg3"),
+&"finish_pnode": SubResource("Animation_yijcs")
+}
+
+[node name="New_Module_Animation" type="Node2D" unique_id=1402683044]
+z_index = 9
+script = ExtResource("1_qnc1b")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=780384551]
+texture_filter = 1
+material = SubResource("ShaderMaterial_1ytrq")
+offset_right = 496.0
+offset_bottom = 672.0
+texture = ExtResource("3_k100d")
+region_rect = Rect2(0, 0, 22, 24)
+patch_margin_left = 10
+patch_margin_top = 9
+patch_margin_right = 10
+patch_margin_bottom = 14
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=19967200]
+libraries/ = SubResource("AnimationLibrary_bdktx")
+
+[node name="NewZoneSound" type="AudioStreamPlayer" parent="." unique_id=1661215980]
+stream = ExtResource("4_al050")
+volume_db = -10.0
+
+[node name="NewZoneSound2" type="AudioStreamPlayer" parent="." unique_id=983126199]
+stream = ExtResource("5_jo333")
+volume_db = -10.0

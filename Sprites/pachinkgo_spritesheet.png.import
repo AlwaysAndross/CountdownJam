@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bq07f7omjioua"
-path="res://.godot/imported/itch_thumb.png-86ca10c0ceec4f83d8bdb9ace3a5dc4d.ctex"
+uid="uid://bw3mamxwqsde7"
+path="res://.godot/imported/pachinkgo_spritesheet.png-f0d72e7c22fd0e6df3dd7bed8c6a91c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/itch_thumb.png"
-dest_files=["res://.godot/imported/itch_thumb.png-86ca10c0ceec4f83d8bdb9ace3a5dc4d.ctex"]
+source_file="res://Sprites/pachinkgo_spritesheet.png"
+dest_files=["res://.godot/imported/pachinkgo_spritesheet.png-f0d72e7c22fd0e6df3dd7bed8c6a91c7.ctex"]
 
 [params]
 

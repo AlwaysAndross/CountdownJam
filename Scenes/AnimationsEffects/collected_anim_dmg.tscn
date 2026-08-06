@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://dqyl75ht8he2u"]
+
+[ext_resource type="Script" uid="uid://bpobto0ji58mg" path="res://Scripts/AnimationsEffects/collected_anim.gd" id="1_6odk4"]
+[ext_resource type="FontFile" uid="uid://da53nf7er5aho" path="res://Fonts/BoldPixels.ttf" id="2_b472r"]
+
+[sub_resource type="Animation" id="Animation_1341t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-49, -20)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wdcqt"]
+resource_name = "collected"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334, 0.20000002, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-49, -20), Vector2(-50, -27), Vector2(-51, -15), Vector2(-49, -23), Vector2(-49, -20)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RichTextLabel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.4, 1.9666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1341t"]
+_data = {
+&"RESET": SubResource("Animation_1341t"),
+&"collected": SubResource("Animation_wdcqt")
+}
+
+[node name="Collected_ANIM" type="Node2D" unique_id=1090267777]
+script = ExtResource("1_6odk4")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1317566782]
+z_index = 7
+offset_left = -49.0
+offset_top = -20.0
+offset_right = 95.0
+offset_bottom = 20.0
+theme_override_fonts/normal_font = ExtResource("2_b472r")
+bbcode_enabled = true
+text = "[wave amp=10.0 freq=20.0 connected=1][rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0]
+BALL DAMAGE UP
+[/rainbow][/wave]"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1135868499]
+libraries/ = SubResource("AnimationLibrary_1341t")
+autoplay = &"collected"

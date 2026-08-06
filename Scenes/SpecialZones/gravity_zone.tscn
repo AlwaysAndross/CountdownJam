@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://b2s2qd4tlxmn7"]
+
+[ext_resource type="Script" uid="uid://uj8edl17kjop" path="res://Scripts/SpecialZones/gravity_zone.gd" id="1_vj6rm"]
+[ext_resource type="Shader" uid="uid://b7glinmnle0gn" path="res://shaders/move_texture.gdshader" id="2_12ghj"]
+[ext_resource type="Texture2D" uid="uid://b5js2ui3rbrnh" path="res://Sprites/shaders/arrow.png" id="3_vj6rm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tybu2"]
+shader = ExtResource("2_12ghj")
+shader_parameter/rotate_degree = 0.0
+shader_parameter/move_degree = 0.0
+shader_parameter/speed = 0.250000011875
+shader_parameter/scale = 0.749999983236
+shader_parameter/gap = Vector2(0, 0)
+shader_parameter/node_scale = Vector2(0.5, 0.5)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_csiu4"]
+blend_mode = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fm10b"]
+size = Vector2(8, 48)
+
+[node name="Gravity_Zone" type="Area2D" unique_id=163085372]
+collision_layer = 2
+script = ExtResource("1_vj6rm")
+gravity_dir = 1
+flipped_color = Color(0.4678653, 0.13911074, 0.1480768, 1)
+normal_color = Color(0.035613313, 0.1002057, 0.32470772, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1453159832]
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_tybu2")
+texture = ExtResource("3_vj6rm")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 8, 8)
+
+[node name="ColorRect" type="ColorRect" parent="Sprite2D" unique_id=1850986121]
+clip_children = 2
+material = SubResource("CanvasItemMaterial_csiu4")
+offset_right = 8.0
+offset_bottom = 8.0
+color = Color(0.08156111, 0.26751885, 0.43420112, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=111973379]
+position = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_fm10b")
+debug_color = Color(0.9213405, 0.21114498, 0.47091383, 0.41960785)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1271969427]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
